@@ -1,0 +1,29 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {},
+    "assert": {
+      "name": "@hyprx/assert",
+      "version": "0.0.0-alpha.0",
+      "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+      },
+    },
+    "testing": {
+      "name": "@hyprx/testing",
+      "version": "0.0.0-alpha.0",
+      "devDependencies": {
+        "@types/node": "^22.14.1",
+      },
+    },
+  },
+  "packages": {
+    "@hyprx/assert": ["@hyprx/assert@workspace:assert"],
+
+    "@hyprx/testing": ["@hyprx/testing@workspace:testing"],
+
+    "@types/node": ["@types/node@22.14.1", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw=="],
+
+    "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
+  }
+}

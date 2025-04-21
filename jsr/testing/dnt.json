@@ -1,0 +1,17 @@
+{
+    "description": "This is a test file for the DNT (Do Not Track) feature in JavaScript.",
+    "keywords": [
+        "testing",
+        "tests",
+        "cross-runtime"
+    ],
+
+    "copy": {
+        "globals.d.ts": "./types/globals.d.ts",
+        "globals.js": "./esm/globals.js"
+    },
+    "rm": [
+        "esm/_dnt.shims.js",
+        "types/_dnt.shims.d.ts"
+    ]
+}

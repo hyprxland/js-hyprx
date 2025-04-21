@@ -1,0 +1,13 @@
+{
+    "fmt": {
+        "exclude": [
+            "**/*.md"
+        ],
+        "indentWidth": 4,
+        "lineWidth": 100
+    },
+    "workspace": [
+        "./testing",
+        "./assert"
+    ]
+}

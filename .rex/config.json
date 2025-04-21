@@ -1,0 +1,60 @@
+{
+  "version": "0.0.0-alpha.0",
+  "packageDefaults": {
+    "type": "module",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "hyprxdev",
+        "email": "dev@hyprx.dev"
+      }
+    ],
+    "scripts": {
+      "test": "node --test",
+      "test:bun": "bun test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/hyprxland/js-hyprx.git"
+    },
+    "bugs": {
+      "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+    },
+    "homepage": "hyperx.land",
+    "engines": {
+      "node": ">=22"
+    },
+    "copy": {
+      "README.md": "README.md",
+      "LICENSE.md": "LICENSE.md"
+    },
+    "rm": [
+      "test_runner.js"
+    ],
+    "devDependencies": {
+      "@types/node": "^22.14.1"
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "projects": [
+    {
+      "name": "testing",
+      "id": "@hyprx/testing",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/testing",
+      "denoConfig": "jsr/testing/deno.json",
+      "dntConfig": "jsr/testing/dnt.json",
+      "packageJson": "npm/testing/package.json"
+    },
+    {
+      "name": "assert",
+      "id": "@hyprx/assert",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/assert",
+      "denoConfig": "jsr/assert/deno.json",
+      "dntConfig": "jsr/assert/dnt.json"
+    }
+  ]
+}
