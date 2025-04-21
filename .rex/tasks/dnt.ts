@@ -11,6 +11,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
     const baseDnt = config.packageDefaults ?? {}
 
 
+    const globalProjects = config.projects ?? [];
     let projects = config.projects ?? [];
     if (projectNames && projectNames.length > 0) {
         projects = projects.filter((project) => projectNames.includes(project.name));
@@ -100,7 +101,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
 
                 if (dntConfig.dependencies) {
                     for (const [key, _] of Object.entries(dntConfig.dependencies)) {
-                        const projectDep = projects.find((p) => p.name === key || p.id === key);
+                        const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
                             dntConfig.dependencies[key] = project.version ?? baseVersion;
                         }
@@ -108,8 +109,11 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                 }
 
                 if (dntConfig.devDependencies) {
+                    console.log("devDependencies", dntConfig.devDependencies);
                     for (const [key, _] of Object.entries(dntConfig.devDependencies)) {
-                        const projectDep = projects.find((p) => p.name === key || p.id === key);
+                        console.log(key);
+                        const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
+                        console.log(projectDep);
                         if (projectDep) {
                             dntConfig.devDependencies[key] = project.version ?? baseVersion;
                         }
@@ -118,7 +122,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
 
                 if (dntConfig.peerDependencies) {
                     for (const [key, _] of Object.entries(dntConfig.peerDependencies)) {
-                        const projectDep = projects.find((p) => p.name === key || p.id === key);
+                        const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
                             dntConfig.peerDependencies[key] = project.version ?? baseVersion;
                         }
@@ -127,7 +131,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
 
                 if (dntConfig.optionalDependencies) {
                     for (const [key, _] of Object.entries(dntConfig.optionalDependencies)) {
-                        const projectDep = projects.find((p) => p.name === key || p.id === key);
+                        const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
                             dntConfig.optionalDependencies[key] = project.version ?? baseVersion;
                         }
@@ -138,6 +142,8 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     entryPoints = dntConfig.entryPoints;
                     delete dntConfig.entryPoints;
                 }
+
+                console.log(dntConfig);
            }
 
            if (entryPoints.length === 0 && denoConfig.exports) {

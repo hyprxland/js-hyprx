@@ -8,6 +8,7 @@
     },
     "workspace": [
         "./testing",
-        "./assert"
+        "./assert",
+        "./chars"
     ]
 }

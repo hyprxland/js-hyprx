@@ -6,6 +6,14 @@
       "name": "@hyprx/assert",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
+        "@hyprx/testing": "0.0.0-alpha.0",
+      },
+    },
+    "chars": {
+      "name": "@hyprx/chars",
+      "version": "0.0.0-alpha.0",
+      "devDependencies": {
+        "@hyprx/assert": "workspace: *",
         "@hyprx/testing": "workspace: *",
       },
     },
@@ -19,6 +27,8 @@
   },
   "packages": {
     "@hyprx/assert": ["@hyprx/assert@workspace:assert"],
+
+    "@hyprx/chars": ["@hyprx/chars@workspace:chars"],
 
     "@hyprx/testing": ["@hyprx/testing@workspace:testing"],
 
