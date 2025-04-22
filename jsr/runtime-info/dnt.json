@@ -1,0 +1,24 @@
+{
+    "description": "Get information about the current javascript runtime and operating system.",
+    "keywords": [
+        "runtime",
+        "js",
+        "arch",
+        "platform",
+        "operating system",
+        "os",
+        "hyprx"
+    ],
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    },
+    "copy": {
+        "globals.d.ts": "./types/globals.d.ts",
+        "globals.js": "./esm/globals.js"
+    },
+    "rm": [
+        "esm/_dnt.shims.js",
+        "types/_dnt.shims.d.ts"
+    ]
+}

@@ -13,5 +13,5 @@
  * ```
  */
 export function isChar(char) {
-    return Number.isInteger(char) && char >= 0 && char <= 0x10FFFF;
+  return Number.isInteger(char) && char >= 0 && char <= 0x10FFFF;
 }

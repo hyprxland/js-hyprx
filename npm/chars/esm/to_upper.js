@@ -18,36 +18,35 @@ import { MAX_RUNE } from "./constants.js";
  * ```
  */
 export function toUpper(char) {
-    if (!Number.isInteger(char) || (char < 1 || char > 0x10FFFF)) {
-        return char;
-    }
-    if (char < 128) {
-        if (char >= 97 && char <= 122) {
-            return char - 32;
-        }
-        return char;
-    }
-    let lo = 0;
-    let hi = CaseRanges.length;
-    while (lo < hi) {
-        const mid = lo + hi >>> 1;
-        const range = CaseRanges[mid];
-        const l = range[0];
-        const h = range[1];
-        const d = range[2];
-        if (l <= char && char <= h) {
-            const delta = d[0];
-            if (delta > MAX_RUNE) {
-                return l + (char - l) & ~1 | 1 & 1;
-            }
-            return char + delta;
-        }
-        if (char < l) {
-            hi = mid;
-        }
-        else {
-            lo = mid + 1;
-        }
+  if (!Number.isInteger(char) || (char < 1 || char > 0x10FFFF)) {
+    return char;
+  }
+  if (char < 128) {
+    if (char >= 97 && char <= 122) {
+      return char - 32;
     }
     return char;
+  }
+  let lo = 0;
+  let hi = CaseRanges.length;
+  while (lo < hi) {
+    const mid = lo + hi >>> 1;
+    const range = CaseRanges[mid];
+    const l = range[0];
+    const h = range[1];
+    const d = range[2];
+    if (l <= char && char <= h) {
+      const delta = d[0];
+      if (delta > MAX_RUNE) {
+        return l + (char - l) & ~1 | 1 & 1;
+      }
+      return char + delta;
+    }
+    if (char < l) {
+      hi = mid;
+    } else {
+      lo = mid + 1;
+    }
+  }
+  return char;
 }

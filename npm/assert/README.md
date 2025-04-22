@@ -18,7 +18,7 @@ that target multiple JavaScript runtimes.
 ## Documentation
 
 Documentation is available on [jsr.io](https://jsr.io/@hyprx/assert/doc)
-
+ 
 ## Usage
 
 ```typescript

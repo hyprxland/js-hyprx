@@ -1,0 +1,64 @@
+{
+  "name": "@hyprx/runtime-info",
+  "version": "0.0.0-alpha.0",
+  "description": "Get information about the current javascript runtime and operating system.",
+  "keywords": [
+    "runtime",
+    "js",
+    "arch",
+    "platform",
+    "operating system",
+    "os",
+    "hyprx"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./js": {
+      "import": {
+        "types": "./types/js.d.ts",
+        "default": "./esm/js.js"
+      }
+    },
+    "./os": {
+      "import": {
+        "types": "./types/os.d.ts",
+        "default": "./esm/os.js"
+      }
+    },
+    "./globals": {
+      "import": {
+        "types": "./types/globals.d.ts",
+        "default": "./esm/globals.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@hyprx/testing": "0.0.0-alpha.0",
+    "@hyprx/assert": "0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

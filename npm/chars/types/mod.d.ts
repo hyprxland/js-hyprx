@@ -150,22 +150,39 @@ import { equalFold, simpleFold } from "./simple_fold.js";
 import { toLower } from "./to_lower.js";
 import { toUpper } from "./to_upper.js";
 export * from "./types.js";
-export { equalFold, isAscii, isChar, isControl, isDigit, isLatin1, isLetter, isLetterOrDigit, isLower, isPunc, isSpace, isSymbol, isUpper, simpleFold, toLower, toUpper, };
+export {
+  equalFold,
+  isAscii,
+  isChar,
+  isControl,
+  isDigit,
+  isLatin1,
+  isLetter,
+  isLetterOrDigit,
+  isLower,
+  isPunc,
+  isSpace,
+  isSymbol,
+  isUpper,
+  simpleFold,
+  toLower,
+  toUpper,
+};
 declare const _default: {
-    equalFold: typeof equalFold;
-    isAscii: typeof isAscii;
-    isChar: typeof isChar;
-    isControl: typeof isControl;
-    isDigit: typeof isDigit;
-    isLatin1: typeof isLatin1;
-    isLetter: typeof isLetter;
-    isLetterOrDigit: typeof isLetterOrDigit;
-    isLower: typeof isLower;
-    isPunc: typeof isPunc;
-    isSpace: typeof isSpace;
-    isSymbol: typeof isSymbol;
-    simpleFold: typeof simpleFold;
-    toLower: typeof toLower;
-    toUpper: typeof toUpper;
+  equalFold: typeof equalFold;
+  isAscii: typeof isAscii;
+  isChar: typeof isChar;
+  isControl: typeof isControl;
+  isDigit: typeof isDigit;
+  isLatin1: typeof isLatin1;
+  isLetter: typeof isLetter;
+  isLetterOrDigit: typeof isLetterOrDigit;
+  isLower: typeof isLower;
+  isPunc: typeof isPunc;
+  isSpace: typeof isSpace;
+  isSymbol: typeof isSymbol;
+  simpleFold: typeof simpleFold;
+  toLower: typeof toLower;
+  toUpper: typeof toUpper;
 };
 export default _default;

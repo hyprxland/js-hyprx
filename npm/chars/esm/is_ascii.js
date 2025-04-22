@@ -13,10 +13,10 @@
  * ```
  */
 export function isAscii(value) {
-    if (!Number.isInteger(value) || value < 0) {
-        return false;
-    }
-    return value < 128;
+  if (!Number.isInteger(value) || value < 0) {
+    return false;
+  }
+  return value < 128;
 }
 /**
  * Checks if the character at the specified index in the given string is an ASCII character.
@@ -35,6 +35,6 @@ export function isAscii(value) {
  * ```
  */
 export function isAsciiAt(value, index) {
-    const code = value.codePointAt(index);
-    return code !== undefined && code > -1 && code < 128;
+  const code = value.codePointAt(index);
+  return code !== undefined && code > -1 && code < 128;
 }

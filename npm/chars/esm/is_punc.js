@@ -14,21 +14,21 @@ import { P } from "./tables/p.js";
  * ```
  */
 export function isPunc(char) {
-    if (Number.isInteger(char) === false || char < 0 || char > 255) {
-        return false;
-    }
-    if (char < 256) {
-        return (latin1[char] & pP) !== 0;
-    }
-    const hi = P.R16[P.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(P.R16, char);
-    }
-    const lo = P.R32[0][0];
-    if (char >= lo) {
-        return is32(P.R32, char);
-    }
+  if (Number.isInteger(char) === false || char < 0 || char > 255) {
     return false;
+  }
+  if (char < 256) {
+    return (latin1[char] & pP) !== 0;
+  }
+  const hi = P.R16[P.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(P.R16, char);
+  }
+  const lo = P.R32[0][0];
+  if (char >= lo) {
+    return is32(P.R32, char);
+  }
+  return false;
 }
 /**
  * Determines whether the given character is a punctuation character.
@@ -48,18 +48,18 @@ export function isPunc(char) {
  * ```
  */
 export function isPuncUnsafe(char) {
-    if (char < 256) {
-        return (latin1[char] & pP) !== 0;
-    }
-    const hi = P.R16[P.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(P.R16, char);
-    }
-    const lo = P.R32[0][0];
-    if (char >= lo) {
-        return is32(P.R32, char);
-    }
-    return false;
+  if (char < 256) {
+    return (latin1[char] & pP) !== 0;
+  }
+  const hi = P.R16[P.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(P.R16, char);
+  }
+  const lo = P.R32[0][0];
+  if (char >= lo) {
+    return is32(P.R32, char);
+  }
+  return false;
 }
 /**
  * Determines whether the character at the specified index in the given string is a punctuation character.
@@ -78,6 +78,6 @@ export function isPuncUnsafe(char) {
  * ```
  */
 export function isPuncAt(str, index) {
-    const code = str.codePointAt(index) ?? 0;
-    return isPunc(code);
+  const code = str.codePointAt(index) ?? 0;
+  return isPunc(code);
 }

@@ -9,6 +9,9 @@
     "workspace": [
         "./testing",
         "./assert",
-        "./chars"
+        "./chars",
+        "./runtime-info",
+        "./process",
+        "./path"
     ]
 }

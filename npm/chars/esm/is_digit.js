@@ -15,21 +15,21 @@ import { is16, is32, latin1, pN } from "./tables/latin1.js";
  * ```
  */
 export function isDigit(char) {
-    if (Number.isInteger(char) === false || char < 0 || char > 0x10FFFF) {
-        return false;
-    }
-    if (char < 256) {
-        return (latin1[char] & pN) !== 0;
-    }
-    const hi = Nd.R16[Nd.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(Nd.R16, char);
-    }
-    const lo = Nd.R32[0][0];
-    if (char >= lo) {
-        return is32(Nd.R32, char);
-    }
+  if (Number.isInteger(char) === false || char < 0 || char > 0x10FFFF) {
     return false;
+  }
+  if (char < 256) {
+    return (latin1[char] & pN) !== 0;
+  }
+  const hi = Nd.R16[Nd.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(Nd.R16, char);
+  }
+  const lo = Nd.R32[0][0];
+  if (char >= lo) {
+    return is32(Nd.R32, char);
+  }
+  return false;
 }
 /**
  * Determines whether the given character is a digit.
@@ -47,18 +47,18 @@ export function isDigit(char) {
  * ```
  */
 export function isDigitUnsafe(char) {
-    if (char < 256) {
-        return (latin1[char] & pN) !== 0;
-    }
-    const hi = Nd.R16[Nd.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(Nd.R16, char);
-    }
-    const lo = Nd.R32[0][0];
-    if (char >= lo) {
-        return is32(Nd.R32, char);
-    }
-    return false;
+  if (char < 256) {
+    return (latin1[char] & pN) !== 0;
+  }
+  const hi = Nd.R16[Nd.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(Nd.R16, char);
+  }
+  const lo = Nd.R32[0][0];
+  if (char >= lo) {
+    return is32(Nd.R32, char);
+  }
+  return false;
 }
 /**
  * Checks if the character at the specified index in the given string is a digit.
@@ -83,6 +83,6 @@ export function isDigitUnsafe(char) {
  * ```
  */
 export function isDigitAt(value, index) {
-    const code = value.codePointAt(index) ?? 0;
-    return isDigitUnsafe(code);
+  const code = value.codePointAt(index) ?? 0;
+  return isDigitUnsafe(code);
 }

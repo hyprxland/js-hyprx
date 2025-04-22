@@ -18,7 +18,7 @@ import { isDigit, isDigitUnsafe } from "./is_digit.js";
  * ```
  */
 export function isLetterOrDigit(char) {
-    return isLetter(char) || isDigit(char);
+  return isLetter(char) || isDigit(char);
 }
 /**
  * Determines whether the given character is a letter or digit.
@@ -43,7 +43,7 @@ export function isLetterOrDigit(char) {
  * ```
  */
 export function isLetterOrDigitUnsafe(char) {
-    return isLetterUnsafe(char) || isDigitUnsafe(char);
+  return isLetterUnsafe(char) || isDigitUnsafe(char);
 }
 /**
  * Determines whether the character at the specified index in the given string is a letter or digit.
@@ -64,6 +64,6 @@ export function isLetterOrDigitUnsafe(char) {
  * ```
  */
 export function isLetterOrDigitAt(str, index) {
-    const code = str.codePointAt(index) ?? 0;
-    return isLetterOrDigitUnsafe(code);
+  const code = str.codePointAt(index) ?? 0;
+  return isLetterOrDigitUnsafe(code);
 }

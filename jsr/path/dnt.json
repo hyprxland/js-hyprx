@@ -1,0 +1,17 @@
+{
+    "description": "path module import from @hyprx/path for node, bun, deno, and browser.",
+    "keywords": [
+        "path",
+        "glob",
+        "url",
+        "file"
+    ],
+    "dependencies": {
+        "@hyprx/runtime-info": "workspace: *",
+        "@hyprx/chars": "workspace: *"
+    },
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    }
+}

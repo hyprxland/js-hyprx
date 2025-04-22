@@ -15,21 +15,21 @@ import { L } from "./tables/l.js";
  * ```
  */
 export function isLetter(char) {
-    if (!Number.isInteger(char) || (char < 1 || char > 0x10FFFF)) {
-        return false;
-    }
-    if (char < 256) {
-        return (latin1[char] & pLmask) !== 0;
-    }
-    const hi = L.R16[L.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(L.R16, char);
-    }
-    const lo = L.R32[0][0];
-    if (char >= lo) {
-        return is32(L.R32, char);
-    }
+  if (!Number.isInteger(char) || (char < 1 || char > 0x10FFFF)) {
     return false;
+  }
+  if (char < 256) {
+    return (latin1[char] & pLmask) !== 0;
+  }
+  const hi = L.R16[L.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(L.R16, char);
+  }
+  const lo = L.R32[0][0];
+  if (char >= lo) {
+    return is32(L.R32, char);
+  }
+  return false;
 }
 /**
  * Checks if the given value represents a letter.
@@ -49,18 +49,18 @@ export function isLetter(char) {
  * ```
  */
 export function isLetterUnsafe(char) {
-    if (char < 256) {
-        return (latin1[char] & pLmask) !== 0;
-    }
-    const hi = L.R16[L.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(L.R16, char);
-    }
-    const lo = L.R32[0][0];
-    if (char >= lo) {
-        return is32(L.R32, char);
-    }
-    return false;
+  if (char < 256) {
+    return (latin1[char] & pLmask) !== 0;
+  }
+  const hi = L.R16[L.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(L.R16, char);
+  }
+  const lo = L.R32[0][0];
+  if (char >= lo) {
+    return is32(L.R32, char);
+  }
+  return false;
 }
 /**
  * Checks if the character at the specified index in the given string is a letter.
@@ -85,6 +85,6 @@ export function isLetterUnsafe(char) {
  * ```
  */
 export function isLetterAt(value, index) {
-    const char = value.codePointAt(index) ?? 0;
-    return isLetterUnsafe(char);
+  const char = value.codePointAt(index) ?? 0;
+  return isLetterUnsafe(char);
 }

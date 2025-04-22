@@ -17,21 +17,21 @@ import { S } from "./tables/s.js";
  * ```
  */
 export function isSymbol(char) {
-    if (Number.isInteger(char) === false || char < 0 || char > 255) {
-        return false;
-    }
-    if (char < 256) {
-        return (latin1[char] & pS) !== 0;
-    }
-    const hi = S.R16[S.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(S.R16, char);
-    }
-    const lo = S.R32[0][0];
-    if (char >= lo) {
-        return is32(S.R32, char);
-    }
+  if (Number.isInteger(char) === false || char < 0 || char > 255) {
     return false;
+  }
+  if (char < 256) {
+    return (latin1[char] & pS) !== 0;
+  }
+  const hi = S.R16[S.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(S.R16, char);
+  }
+  const lo = S.R32[0][0];
+  if (char >= lo) {
+    return is32(S.R32, char);
+  }
+  return false;
 }
 /**
  * Determines whether the given character is a symbol.
@@ -54,18 +54,18 @@ export function isSymbol(char) {
  * ```
  */
 export function isSymbolUnsafe(char) {
-    if (char < 256) {
-        return (latin1[char] & pS) !== 0;
-    }
-    const hi = S.R16[S.R32.length - 1][1];
-    if (char <= hi) {
-        return is16(S.R16, char);
-    }
-    const lo = S.R32[0][0];
-    if (char >= lo) {
-        return is32(S.R32, char);
-    }
-    return false;
+  if (char < 256) {
+    return (latin1[char] & pS) !== 0;
+  }
+  const hi = S.R16[S.R32.length - 1][1];
+  if (char <= hi) {
+    return is16(S.R16, char);
+  }
+  const lo = S.R32[0][0];
+  if (char >= lo) {
+    return is32(S.R32, char);
+  }
+  return false;
 }
 /**
  * Determines whether the given value is a valid Unicode symbol.
@@ -82,6 +82,6 @@ export function isSymbolUnsafe(char) {
  * ```
  */
 export function isSymbolAt(str, index) {
-    const code = str.codePointAt(index) ?? 0;
-    return isSymbol(code);
+  const code = str.codePointAt(index) ?? 0;
+  return isSymbol(code);
 }

@@ -1,7 +1,49 @@
 import { join } from "node:path";
-import { getConfig, setConfig } from "./config.ts";
+import { getConfig, Project, setConfig } from "./config.ts";
 import { jsrDir, npmDir, projectRootDir } from "./paths.ts"
 import { globToRegExp, relative } from "jsr:@std/path@1"
+
+
+export async function filter(projects: Project[], filter?: string[], changes = true) {
+    if (filter && filter.length > 0) {
+        return projects.filter((project) => filter.includes(project.name) || (project.id !== undefined && filter.includes(project.id)));
+    }
+
+    if (changes) {
+
+        const cmd = new Deno.Command("git", {
+            args: ["ls-files", "--others", "--exclude-standard", "--modified"],
+            stdout: "piped",
+            stderr: "piped",
+        });
+
+        const o = await cmd.output();
+        if (o.code !== 0) {
+            console.error("Error running git ls-files");
+            console.error(new TextDecoder().decode(o.stderr));
+        }
+
+        const lines = new TextDecoder().decode(o.stdout).split(/\r?\n/g)
+            .filter(l => l.startsWith("jsr/") || l.startsWith("npm/"));
+
+          
+        const projectDirs = Array<string>();
+        for (const line of lines) {
+            const split = line.split("/");
+            if (split.length < 2)
+                continue
+
+            const idx = `${split[0]}/${split[1]}`;
+            if (!projectDirs.includes(idx)) {
+                projectDirs.push(idx);
+            }
+        }
+
+        return projects.filter((project) => projectDirs.includes(project.dir));
+    }
+
+    return projects;
+}
 
 export async function syncProjects() {
     const config = getConfig();

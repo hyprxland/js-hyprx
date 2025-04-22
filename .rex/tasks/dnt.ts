@@ -1,15 +1,15 @@
 import { dirname, isAbsolute, join, resolve } from "jsr:@std/path@1";
 import { exists } from "jsr:@std/fs@1";
-import { DntConfig, getConfig, Project  } from "./config.ts";
-import { build, emptyDir, type EntryPoint } from "jsr:@deno/dnt";
+import { DntConfig, getConfig, Project, setConfig  } from "./config.ts";
+import { build, emptyDir, type EntryPoint } from "jsr:@deno/dnt@0.41.3";
 import { npmDir, projectRootDir } from "./paths.ts";
+import { blue } from "jsr:@std/fmt@1/colors";
 
 
 export async function runDnt(projectNames?: string[]) : Promise<void> {
     const config = getConfig();
     const baseVersion = config.version ?? "0.0.0";
     const baseDnt = config.packageDefaults ?? {}
-
 
     const globalProjects = config.projects ?? [];
     let projects = config.projects ?? [];
@@ -55,9 +55,6 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
         projects = set;
     }
 
-
-
-
     for (const project of projects) {
         Deno.chdir(projectRootDir);
        if (project.denoConfig) {
@@ -94,6 +91,10 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     delete denoProjectDntConfig.rm;
                 }
 
+                if (!rm.includes("test_runner.js")) {
+                    rm.push("test_runner.js");
+                }
+
                 dntConfig = {
                      ...baseDnt,
                      ...denoProjectDntConfig,
@@ -103,7 +104,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.dependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.dependencies[key] = project.version ?? baseVersion;
+                            dntConfig.dependencies[key] = projectDep.version ?? baseVersion;
                         }
                     }
                 }
@@ -111,11 +112,9 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                 if (dntConfig.devDependencies) {
                     console.log("devDependencies", dntConfig.devDependencies);
                     for (const [key, _] of Object.entries(dntConfig.devDependencies)) {
-                        console.log(key);
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
-                        console.log(projectDep);
                         if (projectDep) {
-                            dntConfig.devDependencies[key] = project.version ?? baseVersion;
+                            dntConfig.devDependencies[key] = projectDep.version ?? baseVersion;
                         }
                     }
                 }
@@ -124,7 +123,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.peerDependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.peerDependencies[key] = project.version ?? baseVersion;
+                            dntConfig.peerDependencies[key] = projectDep.version ?? baseVersion;
                         }
                     }
                 }
@@ -133,7 +132,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.optionalDependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.optionalDependencies[key] = project.version ?? baseVersion;
+                            dntConfig.optionalDependencies[key] = projectDep.version ?? baseVersion;
                         }
                     }
                 }
@@ -142,8 +141,6 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     entryPoints = dntConfig.entryPoints;
                     delete dntConfig.entryPoints;
                 }
-
-                console.log(dntConfig);
            }
 
            if (entryPoints.length === 0 && denoConfig.exports) {
@@ -167,7 +164,6 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
             packageManager: "bun",
             scriptModule: false,
             skipSourceOutput: true,
-            test: false,
             compilerOptions: {
                 "lib": ["ES2023.Collection", "ES2023"],
                 "target": "ES2023",
@@ -196,11 +192,18 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
             },
 
             async postBuild() {
+                const pkg = JSON.parse(Deno.readTextFileSync(join(npmProjectDir, "package.json")));
+                if (pkg.devDependencies && pkg.devDependencies["picocolors"]) {
+                    delete pkg.devDependencies["picocolors"];
+                    await Deno.writeTextFile(join(npmProjectDir, "package.json"), JSON.stringify(pkg, null, 4));
+                }
+
                 const pd = resolve(projectRootDir, project.dir);
                 for (const r of rm) {
+                  
                     const path = resolve(npmProjectDir, r);
                     if (await exists(path)) {
-                        console.log("rm", path);
+                        console.log(blue("rm"), path);
                         await Deno.remove(path, { recursive: true });
                     }
                 }
@@ -217,7 +220,6 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                             src = join(pd, src);
                         }
 
- 
                     }
 
                     if (!isAbsolute(dest)) {
@@ -228,10 +230,8 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                         }
                     }
 
-             
-
                     if (await exists(src)) {
-                        console.log("cp", src, dest);
+                        console.log(blue("cp"), src, dest);
                         await Deno.copyFile(src, dest);
                     }
                 }
@@ -263,14 +263,23 @@ bun.lockb`,
                     console.error(new TextDecoder().decode(o.stderr));
                 }
 
+                
             } 
         });
 
-        console.log("");
+        if (rm.includes("test_runner.js")) {
+            const testRunner = join(npmProjectDir, "test_runner.js");
+            if (await exists(testRunner)) {
+                await Deno.remove(testRunner);
+            }
+        }
+   
+
+        const p = globalProjects.find(o => o.name === project.name);
+        if (p && !p.packageJson) {
+            p.packageJson = join(npmProjectDir, "package.json");
+            setConfig(config);
+        }
        }
-
-      
     }
-
-
 }

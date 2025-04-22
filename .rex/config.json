@@ -29,7 +29,9 @@
       "LICENSE.md": "LICENSE.md"
     },
     "rm": [
-      "test_runner.js"
+      "test_runner.js",
+      "esm/_dnt.shims.js",
+      "types/_dnt.shims.d.ts"
     ],
     "devDependencies": {
       "@types/node": "^22.14.1"
@@ -63,7 +65,35 @@
       "version": "0.0.0-alpha.0",
       "dir": "jsr/chars",
       "denoConfig": "jsr/chars/deno.json",
-      "dntConfig": "jsr/chars/dnt.json"
+      "dntConfig": "jsr/chars/dnt.json",
+      "packageJson": "npm/chars/package.json"
+    },
+    {
+      "name": "runtime-info",
+      "id": "@hyprx/runtime-info",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/runtime-info",
+      "denoConfig": "jsr/runtime-info/deno.json",
+      "dntConfig": "jsr/runtime-info/dnt.json",
+      "packageJson": "npm/runtime-info/package.json"
+    },
+    {
+      "name": "path",
+      "id": "@hyprx/path",
+      "version": "0.0.0",
+      "dir": "jsr/path",
+      "denoConfig": "jsr/path/deno.json",
+      "dntConfig": "jsr/path/dnt.json",
+      "packageJson": "/home/dev_user/repos/hyprxland/js/hyprx/npm/path/package.json"
+    },
+    {
+      "name": "process",
+      "id": "@hyprx/process",
+      "version": "0.1.0",
+      "dir": "jsr/process",
+      "denoConfig": "jsr/process/deno.json",
+      "dntConfig": "jsr/process/dnt.json",
+      "packageJson": "npm/process/package.json"
     }
   ]
 }

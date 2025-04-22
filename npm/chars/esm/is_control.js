@@ -14,10 +14,10 @@ import { latin1, pC } from "./tables/latin1.js";
  * ```
  */
 export function isControl(char) {
-    if (!Number.isInteger(char) || (char < 0 || char > 255)) {
-        return false;
-    }
-    return (latin1[char] & pC) !== 0;
+  if (!Number.isInteger(char) || (char < 0 || char > 255)) {
+    return false;
+  }
+  return (latin1[char] & pC) !== 0;
 }
 /**
  * Determines whether the given character is a control character.
@@ -40,7 +40,7 @@ export function isControl(char) {
  * ```
  */
 export function isControlUnsafe(char) {
-    return (latin1[char] & pC) !== 0;
+  return (latin1[char] & pC) !== 0;
 }
 /**
  * Determines whether the character at the specified index in the given string is a control character.
@@ -59,6 +59,6 @@ export function isControlUnsafe(char) {
  * ```
  */
 export function isControlAt(str, index) {
-    const code = str.codePointAt(index) ?? 0;
-    return (latin1[code] & pC) !== 0;
+  const code = str.codePointAt(index) ?? 0;
+  return (latin1[code] & pC) !== 0;
 }

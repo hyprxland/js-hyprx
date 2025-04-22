@@ -7,14 +7,47 @@
       "version": "0.0.0-alpha.0",
       "devDependencies": {
         "@hyprx/testing": "0.0.0-alpha.0",
+        "picocolors": "^1.0.0",
       },
     },
     "chars": {
       "name": "@hyprx/chars",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/assert": "workspace: *",
-        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+      },
+    },
+    "path": {
+      "name": "@hyprx/path",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/chars": "0.0.0-alpha.0",
+        "@hyprx/runtime-info": "0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+      },
+    },
+    "process": {
+      "name": "@hyprx/process",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/runtime-info": "0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+        "picocolors": "^1.0.0",
+      },
+    },
+    "runtime-info": {
+      "name": "@hyprx/runtime-info",
+      "version": "0.0.0-alpha.0",
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
       },
     },
     "testing": {
@@ -30,9 +63,17 @@
 
     "@hyprx/chars": ["@hyprx/chars@workspace:chars"],
 
+    "@hyprx/path": ["@hyprx/path@workspace:path"],
+
+    "@hyprx/process": ["@hyprx/process@workspace:process"],
+
+    "@hyprx/runtime-info": ["@hyprx/runtime-info@workspace:runtime-info"],
+
     "@hyprx/testing": ["@hyprx/testing@workspace:testing"],
 
     "@types/node": ["@types/node@22.14.1", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw=="],
+
+    "picocolors": ["picocolors@1.1.1", "", {}, "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="],
 
     "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
   }

@@ -14,10 +14,10 @@
  * ```
  */
 export function isLatin1(value) {
-    if (!Number.isInteger(value) || value < 0) {
-        return false;
-    }
-    return value < 256;
+  if (!Number.isInteger(value) || value < 0) {
+    return false;
+  }
+  return value < 256;
 }
 /**
  * Checks if the character at the specified index in the given string is a Latin-1 character.
@@ -38,6 +38,6 @@ export function isLatin1(value) {
  * ```
  */
 export function isLatin1At(value, index) {
-    const code = value.codePointAt(index);
-    return code !== undefined && code > -1 && code < 256;
+  const code = value.codePointAt(index);
+  return code !== undefined && code > -1 && code < 256;
 }

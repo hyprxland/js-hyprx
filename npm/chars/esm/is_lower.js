@@ -16,21 +16,21 @@ import { Ll } from "./tables/ll.js";
  * ```
  */
 export function isLower(char) {
-    if (Number.isInteger(char) === false || char < 0 || char > 0x10FFFF) {
-        return false;
-    }
-    if (char < 256) {
-        return (latin1[char] & pLl) !== 0;
-    }
-    const hi = Ll.R16[Ll.R16.length - 1][1];
-    if (char <= hi) {
-        return is16(Ll.R16, char);
-    }
-    const lo = Ll.R32[0][0];
-    if (char >= lo) {
-        return is32(Ll.R32, char);
-    }
+  if (Number.isInteger(char) === false || char < 0 || char > 0x10FFFF) {
     return false;
+  }
+  if (char < 256) {
+    return (latin1[char] & pLl) !== 0;
+  }
+  const hi = Ll.R16[Ll.R16.length - 1][1];
+  if (char <= hi) {
+    return is16(Ll.R16, char);
+  }
+  const lo = Ll.R32[0][0];
+  if (char >= lo) {
+    return is32(Ll.R32, char);
+  }
+  return false;
 }
 /**
  * Checks if the given value represents a lowercase letter.
@@ -52,18 +52,18 @@ export function isLower(char) {
  * ```
  */
 export function isLowerUnsafe(char) {
-    if (char < 256) {
-        return (latin1[char] & pLl) !== 0;
-    }
-    const hi = Ll.R16[Ll.R16.length - 1][1];
-    if (char <= hi) {
-        return is16(Ll.R16, char);
-    }
-    const lo = Ll.R32[0][0];
-    if (char >= lo) {
-        return is32(Ll.R32, char);
-    }
-    return false;
+  if (char < 256) {
+    return (latin1[char] & pLl) !== 0;
+  }
+  const hi = Ll.R16[Ll.R16.length - 1][1];
+  if (char <= hi) {
+    return is16(Ll.R16, char);
+  }
+  const lo = Ll.R32[0][0];
+  if (char >= lo) {
+    return is32(Ll.R32, char);
+  }
+  return false;
 }
 /**
  * Checks if the character at the specified index in the given string is a lowercase letter.
@@ -83,6 +83,6 @@ export function isLowerUnsafe(char) {
  * ```
  */
 export function isLowerAt(str, index) {
-    const code = str.codePointAt(index) ?? 0;
-    return isLowerUnsafe(code);
+  const code = str.codePointAt(index) ?? 0;
+  return isLowerUnsafe(code);
 }

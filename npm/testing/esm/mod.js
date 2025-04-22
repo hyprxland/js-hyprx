@@ -69,25 +69,19 @@
  * @module
  * @license MIT
  */
-import * as dntShim from "./_dnt.shims.js";
+import { globals } from "./globals.js";
 export * from "./types.js";
-// deno-lint-ignore no-explicit-any
-const g = dntShim.dntGlobalThis;
 let testFn;
-if (g.TestFn) {
-    testFn = g.TestFn;
-}
-else if (g.Bun) {
-    testFn = (await import("./bun.js")).test;
-}
-else if (g.Deno) {
-    testFn = (await import("./deno.js")).test;
-}
-else if (g.process) {
-    testFn = (await import("./node.js")).test;
-}
-else {
-    throw new Error("No test runner found");
+if (globals.TestFn) {
+  testFn = globals.TestFn;
+} else if (globals.Bun) {
+  testFn = (await import("./bun.js")).test;
+} else if (globals.Deno) {
+  testFn = (await import("./deno.js")).test;
+} else if (globals.process) {
+  testFn = (await import("./node.js")).test;
+} else {
+  throw new Error("No test runner found");
 }
 /**
  * The test function defines tests.

@@ -1,0 +1,19 @@
+{
+    "description": "A runtime agnostic process module for Deno, Bun, and Node.js",
+    "keywords": [
+        "process",
+        "stdio",
+        "stdin",
+        "stdout",
+        "stderr",
+        "pushd",
+        "popd"
+    ],
+    "dependencies": {
+        "@hyprx/runtime-info": "workspace: *"
+    },
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    }
+}

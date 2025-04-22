@@ -71,18 +71,18 @@
  */
 
 import type { Test } from "./types.ts";
+import { globals } from "./globals.ts";
 export * from "./types.ts";
 
-// deno-lint-ignore no-explicit-any
-const g = globalThis as any;
 let testFn: Test;
-if (g.TestFn) {
-    testFn = g.TestFn;
-} else if (g.Bun) {
+
+if (globals.TestFn) {
+    testFn = globals.TestFn;
+} else if (globals.Bun) {
     testFn = (await import("./bun.ts")).test;
-} else if (g.Deno) {
+} else if (globals.Deno) {
     testFn = (await import("./deno.ts")).test;
-} else if (g.process) {
+} else if (globals.process) {
     testFn = (await import("./node.ts")).test;
 } else {
     throw new Error("No test runner found");

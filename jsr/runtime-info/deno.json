@@ -1,0 +1,10 @@
+{
+    "name": "@hyprx/runtime-info",
+    "version": "0.0.0-alpha.0",
+    "exports": {
+        ".": "./mod.ts",
+        "./js": "./js.ts",
+        "./os": "./os.ts",
+        "./globals": "./globals.ts"
+    }
+}

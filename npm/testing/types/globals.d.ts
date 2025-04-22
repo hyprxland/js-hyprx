@@ -8,5 +8,5 @@ export declare const globals: typeof globalThis & Record<string, any>;
  * The global defaults
  */
 export declare const defaults: {
-    timeout: number | undefined;
+  timeout: number | undefined;
 };
