@@ -8,17 +8,17 @@ changes to enable it to work in node and bun.
 
 @std/path which is based upon [browsify's implementation of path](https://github.com/browserify/path-browserify/tree/master).
 
-![logo](https://raw.githubusercontent.com/bearz-io/js/refs/heads/main/eng/assets/bearz.io.png)
+![logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
 
 [![JSR](https://jsr.io/badges/@hyprx/path)](https://jsr.io/@hyprx/path)
 [![npm version](https://badge.fury.io/js/@hyprx%2Fpath.svg)](https://badge.fury.io/js/@hyprx%2Fpath)
-[![GitHub version](https://badge.fury.io/gh/bearz-io%2Fjs-path.svg)](https://badge.fury.io/gh/bearz-io%2Fjs-path)
+[![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
 
 ## Documentation
 
 Documentation is available on [jsr.io](https://jsr.io/@hyprx/path/doc)
 
-A list of other modules can be found at [github.com/bearz-io/js](https://github.com/bearz-io/js)
+A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)
 
 ## Usage
 

@@ -1,0 +1,157 @@
+{
+  "name": "@hyprx/slices",
+  "version": "0.0.0-alpha.0",
+  "description": "Cross runtime module for slices and char slices which creates views over arrays without allocating  a new array.  Char slices is useful for transforming text without allocating a new string for every change.",
+  "keywords": [
+    "slices",
+    "arrays",
+    "char-arrays",
+    "characters",
+    "case-insensitive",
+    "string"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./camelize": {
+      "import": {
+        "types": "./types/camelize.d.ts",
+        "default": "./esm/camelize.js"
+      }
+    },
+    "./capitalize": {
+      "import": {
+        "types": "./types/capitalize.d.ts",
+        "default": "./esm/capitalize.js"
+      }
+    },
+    "./char-array-builder": {
+      "import": {
+        "types": "./types/char_array_builder.d.ts",
+        "default": "./esm/char_array_builder.js"
+      }
+    },
+    "./char-slice": {
+      "import": {
+        "types": "./types/char_slice.d.ts",
+        "default": "./esm/char_slice.js"
+      }
+    },
+    "./dasherize": {
+      "import": {
+        "types": "./types/dasherize.d.ts",
+        "default": "./esm/dasherize.js"
+      }
+    },
+    "./ends-with": {
+      "import": {
+        "types": "./types/ends_with.d.ts",
+        "default": "./esm/ends_with.js"
+      }
+    },
+    "./equal": {
+      "import": {
+        "types": "./types/equal.d.ts",
+        "default": "./esm/equal.js"
+      }
+    },
+    "./index-of": {
+      "import": {
+        "types": "./types/index_of.d.ts",
+        "default": "./esm/index_of.js"
+      }
+    },
+    "./last-index-of": {
+      "import": {
+        "types": "./types/last_index_of.d.ts",
+        "default": "./esm/last_index_of.js"
+      }
+    },
+    "./ordinalize": {
+      "import": {
+        "types": "./types/ordinalize.d.ts",
+        "default": "./esm/ordinalize.js"
+      }
+    },
+    "./pascalize": {
+      "import": {
+        "types": "./types/pascalize.d.ts",
+        "default": "./esm/pascalize.js"
+      }
+    },
+    "./slice": {
+      "import": {
+        "types": "./types/slice.d.ts",
+        "default": "./esm/slice.js"
+      }
+    },
+    "./starts-with": {
+      "import": {
+        "types": "./types/starts_with.d.ts",
+        "default": "./esm/starts_with.js"
+      }
+    },
+    "./titleize": {
+      "import": {
+        "types": "./types/titleize.d.ts",
+        "default": "./esm/titleize.js"
+      }
+    },
+    "./tokens": {
+      "import": {
+        "types": "./types/tokens.d.ts",
+        "default": "./esm/tokens.js"
+      }
+    },
+    "./trim": {
+      "import": {
+        "types": "./types/trim.d.ts",
+        "default": "./esm/trim.js"
+      }
+    },
+    "./underscore": {
+      "import": {
+        "types": "./types/underscore.d.ts",
+        "default": "./esm/underscore.js"
+      }
+    },
+    "./utils": {
+      "import": {
+        "types": "./types/utils.d.ts",
+        "default": "./esm/utils.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/runtime-info": "0.0.0-alpha.0",
+    "@hyprx/chars": "0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@hyprx/testing": "0.0.0-alpha.0",
+    "@hyprx/assert": "0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

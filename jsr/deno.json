@@ -12,6 +12,8 @@
         "./chars",
         "./runtime-info",
         "./process",
-        "./path"
+        "./path",
+        "./slices",
+        "./strings"
     ]
 }

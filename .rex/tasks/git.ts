@@ -9,3 +9,4 @@ export function getGitUrl() {
 
     return new TextDecoder().decode(cmd.outputSync().stdout);
 }
+

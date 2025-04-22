@@ -84,7 +84,7 @@
       "dir": "jsr/path",
       "denoConfig": "jsr/path/deno.json",
       "dntConfig": "jsr/path/dnt.json",
-      "packageJson": "/home/dev_user/repos/hyprxland/js/hyprx/npm/path/package.json"
+      "packageJson": "npm/path/package.json"
     },
     {
       "name": "process",
@@ -94,6 +94,24 @@
       "denoConfig": "jsr/process/deno.json",
       "dntConfig": "jsr/process/dnt.json",
       "packageJson": "npm/process/package.json"
+    },
+    {
+      "name": "slices",
+      "id": "@hyprx/slices",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/slices",
+      "denoConfig": "jsr/slices/deno.json",
+      "dntConfig": "jsr/slices/dnt.json",
+      "packageJson": "npm/slices/package.json"
+    },
+    {
+      "name": "strings",
+      "id": "@hyprx/strings",
+      "version": "0.1.3",
+      "dir": "jsr/strings",
+      "denoConfig": "jsr/strings/deno.json",
+      "dntConfig": "jsr/strings/dnt.json",
+      "packageJson": "npm/strings/package.json"
     }
   ]
 }

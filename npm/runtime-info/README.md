@@ -11,13 +11,13 @@ The library primarily enables writing cross platform and runtime code.
 
 [![JSR](https://jsr.io/badges/@hyprx/runtime-info)](https://jsr.io/@hyprx/runtime-info)
 [![npm version](https://badge.fury.io/js/@hyprx%2Fruntime-info.svg)](https://badge.fury.io/js/@hyprx%2Fruntime-info)
-[![GitHub version](https://badge.fury.io/gh/bearz-io%2Fjs-runtime-info.svg)](https://badge.fury.io/gh/bearz-io%2Fjs-runtime-info)
+[![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
 
 ## Documentation
 
 Documentation is available on [jsr.io](https://jsr.io/@hyprx/runtime-info/doc)
 
-A list of other modules can be found at [github.com/bearz-io/js](https://github.com/bearz-io/js)
+A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)
 
 ## Usage
 

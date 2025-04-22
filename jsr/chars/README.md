@@ -17,7 +17,7 @@ unicode module.
 [![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
 
 ## Documentation
- 
+
 Documentation is available on [jsr.io](https://jsr.io/@hyprx/chars/doc)
 
 A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)

@@ -18,7 +18,6 @@ features and test styles until node:test is available in all three testing runti
 
 Documentation is available on [jsr.io](https://jsr.io/@hyprx/testing/doc)
 
-
 ## Usage
 
 psuedo code to show off the test function.

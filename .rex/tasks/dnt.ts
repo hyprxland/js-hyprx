@@ -4,6 +4,7 @@ import { DntConfig, getConfig, Project, setConfig  } from "./config.ts";
 import { build, emptyDir, type EntryPoint } from "jsr:@deno/dnt@0.41.3";
 import { npmDir, projectRootDir } from "./paths.ts";
 import { blue } from "jsr:@std/fmt@1/colors";
+import { relative } from "node:path";
 
 
 export async function runDnt(projectNames?: string[]) : Promise<void> {
@@ -17,7 +18,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
         projects = projects.filter((project) => projectNames.includes(project.name));
     } else {
         const cmd = new Deno.Command("git", {
-            args: ["ls-files", "--others", "--exclude-standard", "--modified"],
+            args: ["status", "-s"],
             stdout: "piped",
             stderr: "piped",
         });
@@ -29,7 +30,13 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
         }
 
         const lines = new TextDecoder().decode(o.stdout).split(/\r?\n/g)
+            .map(o =>  {
+                const t = o.trim();
+                return t.substring(t.indexOf(" ") + 1).trim();
+            })
             .filter(l => l.startsWith("jsr/") || l.startsWith("npm/"));
+
+        console.log(lines);
 
         const projectDirs = Array<string>();
         for (const line of lines) {
@@ -278,6 +285,10 @@ bun.lockb`,
         const p = globalProjects.find(o => o.name === project.name);
         if (p && !p.packageJson) {
             p.packageJson = join(npmProjectDir, "package.json");
+            if (isAbsolute(p.packageJson)) {
+                p.packageJson = relative(projectRootDir, p.packageJson);
+            }
+
             setConfig(config);
         }
        }

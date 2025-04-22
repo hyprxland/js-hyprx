@@ -7,7 +7,6 @@
       "version": "0.0.0-alpha.0",
       "devDependencies": {
         "@hyprx/testing": "0.0.0-alpha.0",
-        "picocolors": "^1.0.0",
       },
     },
     "chars": {
@@ -39,7 +38,6 @@
       "devDependencies": {
         "@hyprx/assert": "0.0.0-alpha.0",
         "@hyprx/testing": "0.0.0-alpha.0",
-        "picocolors": "^1.0.0",
       },
     },
     "runtime-info": {
@@ -48,6 +46,30 @@
       "devDependencies": {
         "@hyprx/assert": "0.0.0-alpha.0",
         "@hyprx/testing": "0.0.0-alpha.0",
+      },
+    },
+    "slices": {
+      "name": "@hyprx/slices",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/chars": "0.0.0-alpha.0",
+        "@hyprx/runtime-info": "0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+      },
+    },
+    "strings": {
+      "name": "@hyprx/strings",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/slices": "0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+        "picocolors": "^1.0.0",
       },
     },
     "testing": {
@@ -68,6 +90,10 @@
     "@hyprx/process": ["@hyprx/process@workspace:process"],
 
     "@hyprx/runtime-info": ["@hyprx/runtime-info@workspace:runtime-info"],
+
+    "@hyprx/slices": ["@hyprx/slices@workspace:slices"],
+
+    "@hyprx/strings": ["@hyprx/strings@workspace:strings"],
 
     "@hyprx/testing": ["@hyprx/testing@workspace:testing"],
 
