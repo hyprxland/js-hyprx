@@ -1,74 +1,74 @@
 {
-    "name": "@hyprx/ci-env",
-    "version": "0.0.0-alpha.0",
-    "description": "The ci-env module implements it's own `@hyprx/ansi/writer` to enable logging commands for Azure DevOps and Github. ",
-    "keywords": [
-        "hyprx",
-        "ci",
-        "env",
-        "azure",
-        "devops",
-        "github",
-        "variables"
-    ],
-    "homepage": "hyperx.land",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  "name": "@hyprx/ci-env",
+  "version": "0.0.0-alpha.0",
+  "description": "The ci-env module implements it's own `@hyprx/ansi/writer` to enable logging commands for Azure DevOps and Github. ",
+  "keywords": [
+    "hyprx",
+    "ci",
+    "env",
+    "azure",
+    "devops",
+    "github",
+    "variables"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
     },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+    "./driver": {
+      "import": {
+        "types": "./types/driver.d.ts",
+        "default": "./esm/driver.js"
+      }
     },
-    "module": "./esm/mod.js",
-    "types": "./types/mod.d.ts",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./types/mod.d.ts",
-                "default": "./esm/mod.js"
-            }
-        },
-        "./driver": {
-            "import": {
-                "types": "./types/driver.d.ts",
-                "default": "./esm/driver.js"
-            }
-        },
-        "./writer": {
-            "import": {
-                "types": "./types/writer.d.ts",
-                "default": "./esm/writer.js"
-            }
-        },
-        "./vars": {
-            "import": {
-                "types": "./types/vars.d.ts",
-                "default": "./esm/vars.js"
-            }
-        }
+    "./writer": {
+      "import": {
+        "types": "./types/writer.d.ts",
+        "default": "./esm/writer.js"
+      }
     },
-    "scripts": {
-        "test": "node --test",
-        "test:bun": "bun test"
-    },
-    "type": "module",
-    "engines": {
-        "node": ">=22"
-    },
-    "dependencies": {
-        "@hyprx/ansi": "^0.0.0-alpha.0",
-        "@hyprx/dotenv": "^0.0.0-alpha.0",
-        "@hyprx/env": "^0.0.0-alpha.0",
-        "@hyprx/fmt": "^0.0.0-alpha.0",
-        "@hyprx/fs": "^0.0.0-alpha.0",
-        "@hyprx/runtime-info": "^0.0.0-alpha.0",
-        "@hyprx/secrets": "^0.0.0-alpha.0"
-    },
-    "devDependencies": {
-        "@types/node": "^22.14.1",
-        "@hyprx/assert": "^0.0.0-alpha.0",
-        "@hyprx/testing": "^0.0.0-alpha.0"
-    },
-    "_generatedBy": "dnt@dev"
+    "./vars": {
+      "import": {
+        "types": "./types/vars.d.ts",
+        "default": "./esm/vars.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/ansi": "^0.0.0-alpha.0",
+    "@hyprx/dotenv": "^0.0.0-alpha.0",
+    "@hyprx/env": "^0.0.0-alpha.0",
+    "@hyprx/fmt": "^0.0.0-alpha.0",
+    "@hyprx/fs": "^0.0.0-alpha.0",
+    "@hyprx/runtime-info": "^0.0.0-alpha.0",
+    "@hyprx/secrets": "^0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@hyprx/assert": "^0.0.0-alpha.0",
+    "@hyprx/testing": "^0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
 }

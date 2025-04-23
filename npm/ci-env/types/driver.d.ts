@@ -1,7 +1,19 @@
 /**
  * The CI provider.
  */
-export type CiDriver = "local" | "github" | "gitlab" | "bitbucket" | "azdo" | "jenkins" | "travisci" | "appveyor" | "circleci" | "codeship" | "drone" | "gitea";
+export type CiDriver =
+  | "local"
+  | "github"
+  | "gitlab"
+  | "bitbucket"
+  | "azdo"
+  | "jenkins"
+  | "travisci"
+  | "appveyor"
+  | "circleci"
+  | "codeship"
+  | "drone"
+  | "gitea";
 /**
  * The CI provider.
  */

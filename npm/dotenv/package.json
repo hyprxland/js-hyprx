@@ -1,91 +1,91 @@
 {
-    "name": "@hyprx/dotenv",
-    "version": "0.0.0-alpha.0",
-    "description": "A dotenv module that can parse .env files into a document or normal object, expand variables, and stringify documents or objects into a .env content.",
-    "keywords": [
-        "dotenv",
-        "env",
-        "variables"
-    ],
-    "homepage": "hyperx.land",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  "name": "@hyprx/dotenv",
+  "version": "0.0.0-alpha.0",
+  "description": "A dotenv module that can parse .env files into a document or normal object, expand variables, and stringify documents or objects into a .env content.",
+  "keywords": [
+    "dotenv",
+    "env",
+    "variables"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
     },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+    "./document": {
+      "import": {
+        "types": "./types/document.d.ts",
+        "default": "./esm/document.js"
+      }
     },
-    "module": "./esm/mod.js",
-    "types": "./types/mod.d.ts",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./types/mod.d.ts",
-                "default": "./esm/mod.js"
-            }
-        },
-        "./document": {
-            "import": {
-                "types": "./types/document.d.ts",
-                "default": "./esm/document.js"
-            }
-        },
-        "./expand": {
-            "import": {
-                "types": "./types/expand.d.ts",
-                "default": "./esm/expand.js"
-            }
-        },
-        "./load": {
-            "import": {
-                "types": "./types/load.d.ts",
-                "default": "./esm/load.js"
-            }
-        },
-        "./parse-document": {
-            "import": {
-                "types": "./types/parse_document.d.ts",
-                "default": "./esm/parse_document.js"
-            }
-        },
-        "./parse": {
-            "import": {
-                "types": "./types/parse.d.ts",
-                "default": "./esm/parse.js"
-            }
-        },
-        "./stringify": {
-            "import": {
-                "types": "./types/stringify.d.ts",
-                "default": "./esm/stringify.js"
-            }
-        },
-        "./stringify-document": {
-            "import": {
-                "types": "./types/stringify_document.d.ts",
-                "default": "./esm/stringify_document.js"
-            }
-        }
+    "./expand": {
+      "import": {
+        "types": "./types/expand.d.ts",
+        "default": "./esm/expand.js"
+      }
     },
-    "scripts": {
-        "test": "node --test",
-        "test:bun": "bun test"
+    "./load": {
+      "import": {
+        "types": "./types/load.d.ts",
+        "default": "./esm/load.js"
+      }
     },
-    "type": "module",
-    "engines": {
-        "node": ">=22"
+    "./parse-document": {
+      "import": {
+        "types": "./types/parse_document.d.ts",
+        "default": "./esm/parse_document.js"
+      }
     },
-    "dependencies": {
-        "@hyprx/chars": "^0.0.0-alpha.0",
-        "@hyprx/runtime-info": "^0.0.0-alpha.0",
-        "@hyprx/strings": "^0.0.0-alpha.0",
-        "@hyprx/env": "^0.0.0-alpha.0"
+    "./parse": {
+      "import": {
+        "types": "./types/parse.d.ts",
+        "default": "./esm/parse.js"
+      }
     },
-    "devDependencies": {
-        "@types/node": "^22.14.1",
-        "@hyprx/testing": "^0.0.0-alpha.0",
-        "@hyprx/assert": "^0.0.0-alpha.0"
+    "./stringify": {
+      "import": {
+        "types": "./types/stringify.d.ts",
+        "default": "./esm/stringify.js"
+      }
     },
-    "_generatedBy": "dnt@dev"
+    "./stringify-document": {
+      "import": {
+        "types": "./types/stringify_document.d.ts",
+        "default": "./esm/stringify_document.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/chars": "^0.0.0-alpha.0",
+    "@hyprx/runtime-info": "^0.0.0-alpha.0",
+    "@hyprx/strings": "^0.0.0-alpha.0",
+    "@hyprx/env": "^0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@hyprx/testing": "^0.0.0-alpha.0",
+    "@hyprx/assert": "^0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
 }

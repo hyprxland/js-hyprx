@@ -8,16 +8,16 @@
  * Options for loading environment variables.
  */
 export interface LoadOptions {
-    /**
-     * If true, existing environment variables will not be overwritten.
-     * @default false
-     */
-    skipExisiting?: boolean;
-    /**
-     * If true, variable expansion will be skipped.
-     * @default false
-     */
-    skipExpansion?: boolean;
+  /**
+   * If true, existing environment variables will not be overwritten.
+   * @default false
+   */
+  skipExisiting?: boolean;
+  /**
+   * If true, variable expansion will be skipped.
+   * @default false
+   */
+  skipExpansion?: boolean;
 }
 /**
  * Loads environment variables from the given source object into the environment.

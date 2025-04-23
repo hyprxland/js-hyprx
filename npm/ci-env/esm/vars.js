@@ -14,9 +14,9 @@ let envVar = "BEARZ_CI_ENV";
 let pathVar = "BEARZ_CI_PATH";
 let secretsVar = "BEARZ_CI_SECRETS";
 if (CI_DRIVER === "github") {
-    outputVar = "GITHUB_OUTPUT";
-    envVar = "GITHUB_ENV";
-    pathVar = "GITHUB_PATH";
+  outputVar = "GITHUB_OUTPUT";
+  envVar = "GITHUB_ENV";
+  pathVar = "GITHUB_PATH";
 }
 let sm = secretMasker;
 /**
@@ -24,14 +24,14 @@ let sm = secretMasker;
  * @param s The secret masker to use.
  */
 export function setSecretMasker(s) {
-    sm = s;
+  sm = s;
 }
 /**
  * Gets the global secret masker for the ci-env module.
  * @returns The global secret masker for the ci-env module.
  */
 export function getSecretMasker() {
-    return sm;
+  return sm;
 }
 /**
  * Sets the name of the environment variables to use
@@ -41,21 +41,21 @@ export function getSecretMasker() {
  * @param o The options to set the environment variable names.
  */
 export function setCiEnvKeys(o) {
-    if (CI_DRIVER === "github") {
-        return;
-    }
-    if (o.output !== undefined) {
-        outputVar = o.output;
-    }
-    if (o.env !== undefined) {
-        envVar = o.env;
-    }
-    if (o.path !== undefined) {
-        pathVar = o.path;
-    }
-    if (o.secrets !== undefined) {
-        secretsVar = o.secrets;
-    }
+  if (CI_DRIVER === "github") {
+    return;
+  }
+  if (o.output !== undefined) {
+    outputVar = o.output;
+  }
+  if (o.env !== undefined) {
+    envVar = o.env;
+  }
+  if (o.path !== undefined) {
+    pathVar = o.path;
+  }
+  if (o.secrets !== undefined) {
+    secretsVar = o.secrets;
+  }
 }
 /**
  * Prepends a path to the CI path.
@@ -70,34 +70,34 @@ export function setCiEnvKeys(o) {
  * @param value The path to prepend to the CI path.
  */
 export function prependCiPath(value) {
-    if (!hasPath(value)) {
-        prependPath(value);
-    }
-    switch (CI_DRIVER) {
-        case "azdo":
-            console.log(`##vso[task.prependpath]${value}`);
-            break;
-        case "github":
-            {
-                const pathFile = get(pathVar);
-                if (pathFile) {
-                    writeTextFileSync(pathFile, `${value}\n`, { append: true });
-                }
-            }
-            break;
-        default:
-            {
-                const pathFile = get(pathVar);
-                if (!pathFile) {
-                    const tempPathFile = makeTempFileSync({ suffix: "ci-paths.txt" });
-                    set(pathVar, tempPathFile);
-                }
-                if (pathFile) {
-                    writeTextFileSync(pathFile, `${value}\n`, { append: true });
-                }
-            }
-            break;
-    }
+  if (!hasPath(value)) {
+    prependPath(value);
+  }
+  switch (CI_DRIVER) {
+    case "azdo":
+      console.log(`##vso[task.prependpath]${value}`);
+      break;
+    case "github":
+      {
+        const pathFile = get(pathVar);
+        if (pathFile) {
+          writeTextFileSync(pathFile, `${value}\n`, { append: true });
+        }
+      }
+      break;
+    default:
+      {
+        const pathFile = get(pathVar);
+        if (!pathFile) {
+          const tempPathFile = makeTempFileSync({ suffix: "ci-paths.txt" });
+          set(pathVar, tempPathFile);
+        }
+        if (pathFile) {
+          writeTextFileSync(pathFile, `${value}\n`, { append: true });
+        }
+      }
+      break;
+  }
 }
 /**
  * Gets the path to the CI path file which stores
@@ -106,12 +106,12 @@ export function prependCiPath(value) {
  * @returns The path to the CI path file.
  */
 export function getCiPath() {
-    let pathFile = get(pathVar);
-    if (!pathFile) {
-        pathFile = makeTempFileSync({ suffix: "ci-paths.txt" });
-        set(pathVar, pathFile);
-    }
-    return pathFile;
+  let pathFile = get(pathVar);
+  if (!pathFile) {
+    pathFile = makeTempFileSync({ suffix: "ci-paths.txt" });
+    set(pathVar, pathFile);
+  }
+  return pathFile;
 }
 /**
  * Gets the file that stores the environment variables
@@ -120,12 +120,12 @@ export function getCiPath() {
  * @returns The path to the CI env file.
  */
 export function getCiEnv() {
-    let envFile = get(envVar);
-    if (!envFile) {
-        envFile = makeTempFileSync({ suffix: "ci.env" });
-        set(envVar, envFile);
-    }
-    return envFile;
+  let envFile = get(envVar);
+  if (!envFile) {
+    envFile = makeTempFileSync({ suffix: "ci.env" });
+    set(envVar, envFile);
+  }
+  return envFile;
 }
 /**
  * Gets the file that stores the output variables
@@ -133,12 +133,12 @@ export function getCiEnv() {
  * @returns The path to the CI output file.
  */
 export function getCiOutput() {
-    let outputFile = get(outputVar);
-    if (!outputFile) {
-        outputFile = makeTempFileSync({ suffix: "ci.output.txt" });
-        set(outputVar, outputFile);
-    }
-    return outputFile;
+  let outputFile = get(outputVar);
+  if (!outputFile) {
+    outputFile = makeTempFileSync({ suffix: "ci.output.txt" });
+    set(outputVar, outputFile);
+  }
+  return outputFile;
 }
 /**
  * Gets the file that stores the secrets
@@ -147,12 +147,12 @@ export function getCiOutput() {
  * @returns The path to the CI secrets file.
  */
 export function getCiSecrets() {
-    let secretsFile = get(secretsVar);
-    if (!secretsFile) {
-        secretsFile = makeTempFileSync({ suffix: "ci.secrets.env" });
-        set(secretsVar, secretsFile);
-    }
-    return secretsFile;
+  let secretsFile = get(secretsVar);
+  if (!secretsFile) {
+    secretsFile = makeTempFileSync({ suffix: "ci.secrets.env" });
+    set(secretsVar, secretsFile);
+  }
+  return secretsFile;
 }
 /**
  * Sets a variable in the CI environment. Generally variables
@@ -181,75 +181,73 @@ export function getCiSecrets() {
  * @returns void
  */
 export function setCiVariable(name, value, options) {
-    set(name, value);
-    if (options?.secret) {
-        sm.add(value);
-    }
-    switch (CI_DRIVER) {
-        case "azdo":
-            {
-                let attr = "";
-                if (options?.secret) {
-                    attr += ";issecret=true";
-                }
-                if (options?.output) {
-                    attr += ";isoutput=true";
-                }
-                console.log(`##vso[task.setvariable variable=${name}${attr}]${value}`);
-            }
-            break;
-        case "github":
-            {
-                if (options?.secret) {
-                    console.log("::add-mask::" + value);
-                }
-                const envFile = get(envVar);
-                if (envFile) {
-                    if (value.includes("\n")) {
-                        writeTextFileSync(envFile, `${name}<<EOF\n${value}\nEOF\n`, {
-                            append: true,
-                        });
-                    }
-                    else {
-                        writeTextFileSync(envFile, `${name}=${value}\n`, { append: true });
-                    }
-                }
-                if (!options?.output) {
-                    return;
-                }
-                const outputFile = get(outputVar);
-                if (outputFile) {
-                    if (value.includes("\n")) {
-                        writeTextFileSync(outputFile, `${name}<<EOF\n${value}\nEOF\n`, {
-                            append: true,
-                        });
-                    }
-                    else {
-                        writeTextFileSync(outputFile, `${name}=${value}\n`, { append: true });
-                    }
-                }
-            }
-            break;
-        default:
-            {
-                const envFile = getCiEnv();
-                const outputFile = get(outputVar);
-                const data = { [name]: value };
-                const content = stringify(data);
-                writeTextFileSync(envFile, content, { append: true });
-                if (options?.output) {
-                    if (outputFile) {
-                        writeTextFileSync(outputFile, content, { append: true });
-                    }
-                }
-                if (!options?.secret) {
-                    return;
-                }
-                const secretsFile = getCiSecrets();
-                writeTextFileSync(secretsFile, content, { append: true });
-            }
-            break;
-    }
+  set(name, value);
+  if (options?.secret) {
+    sm.add(value);
+  }
+  switch (CI_DRIVER) {
+    case "azdo":
+      {
+        let attr = "";
+        if (options?.secret) {
+          attr += ";issecret=true";
+        }
+        if (options?.output) {
+          attr += ";isoutput=true";
+        }
+        console.log(`##vso[task.setvariable variable=${name}${attr}]${value}`);
+      }
+      break;
+    case "github":
+      {
+        if (options?.secret) {
+          console.log("::add-mask::" + value);
+        }
+        const envFile = get(envVar);
+        if (envFile) {
+          if (value.includes("\n")) {
+            writeTextFileSync(envFile, `${name}<<EOF\n${value}\nEOF\n`, {
+              append: true,
+            });
+          } else {
+            writeTextFileSync(envFile, `${name}=${value}\n`, { append: true });
+          }
+        }
+        if (!options?.output) {
+          return;
+        }
+        const outputFile = get(outputVar);
+        if (outputFile) {
+          if (value.includes("\n")) {
+            writeTextFileSync(outputFile, `${name}<<EOF\n${value}\nEOF\n`, {
+              append: true,
+            });
+          } else {
+            writeTextFileSync(outputFile, `${name}=${value}\n`, { append: true });
+          }
+        }
+      }
+      break;
+    default:
+      {
+        const envFile = getCiEnv();
+        const outputFile = get(outputVar);
+        const data = { [name]: value };
+        const content = stringify(data);
+        writeTextFileSync(envFile, content, { append: true });
+        if (options?.output) {
+          if (outputFile) {
+            writeTextFileSync(outputFile, content, { append: true });
+          }
+        }
+        if (!options?.secret) {
+          return;
+        }
+        const secretsFile = getCiSecrets();
+        writeTextFileSync(secretsFile, content, { append: true });
+      }
+      break;
+  }
 }
 /**
  * Loads the CI secrets from the secrets file if
@@ -265,18 +263,18 @@ export function setCiVariable(name, value, options) {
  * @returns void
  */
 export function loadCiSecrets() {
-    const secretsFile = getCiSecrets();
-    if (!existsSync(secretsFile)) {
-        return;
+  const secretsFile = getCiSecrets();
+  if (!existsSync(secretsFile)) {
+    return;
+  }
+  const data = readTextFileSync(secretsFile);
+  const env = parse(data);
+  for (const key in env) {
+    if (env[key] !== undefined) {
+      sm.add(env[key]);
+      set(key, env[key]);
     }
-    const data = readTextFileSync(secretsFile);
-    const env = parse(data);
-    for (const key in env) {
-        if (env[key] !== undefined) {
-            sm.add(env[key]);
-            set(key, env[key]);
-        }
-    }
+  }
 }
 /**
  * Prepares the CI environment by loading the
@@ -286,17 +284,17 @@ export function loadCiSecrets() {
  * @returns void
  */
 export function loadCiEnvVars() {
-    const envFile = getCiEnv();
-    if (!existsSync(envFile)) {
-        return;
+  const envFile = getCiEnv();
+  if (!existsSync(envFile)) {
+    return;
+  }
+  const data = readTextFileSync(envFile);
+  const env = parse(data);
+  for (const key in env) {
+    if (env[key] !== undefined) {
+      set(key, env[key]);
     }
-    const data = readTextFileSync(envFile);
-    const env = parse(data);
-    for (const key in env) {
-        if (env[key] !== undefined) {
-            set(key, env[key]);
-        }
-    }
+  }
 }
 /**
  * Prepares the CI environment by loading the
@@ -305,15 +303,15 @@ export function loadCiEnvVars() {
  * @returns void
  */
 export function loadPathVars() {
-    const pathFile = getCiPath();
-    if (!existsSync(pathFile)) {
-        return;
+  const pathFile = getCiPath();
+  if (!existsSync(pathFile)) {
+    return;
+  }
+  const data = readTextFileSync(pathFile);
+  const paths = data.split(/\r?\n/).map((l) => l.trim()).filter((p) => p.length > 0);
+  for (const path of paths) {
+    if (!hasPath(path)) {
+      prependPath(path);
     }
-    const data = readTextFileSync(pathFile);
-    const paths = data.split(/\r?\n/).map((l) => l.trim()).filter((p) => p.length > 0);
-    for (const path of paths) {
-        if (!hasPath(path)) {
-            prependPath(path);
-        }
-    }
+  }
 }

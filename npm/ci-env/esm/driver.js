@@ -7,37 +7,27 @@
 import { get } from "@hyprx/env";
 let provider = "local";
 if (get("GITEA_WORK_DIR") !== undefined) {
-    provider = "gitea";
-}
-else if (get("GITHUB_ACTIONS") === "true" || get("GITHUB_WORKFLOW") !== undefined) {
-    provider = "github";
-}
-else if (get("GITLAB_CI") === "true") {
-    provider = "gitlab";
-}
-else if (get("TF_BUILD") === "True" || get("SYSTEM_TEAMFOUNDATIONCOLLECTIONURI") !== undefined) {
-    provider = "azdo";
-}
-else if (get("BITBUCKET_BUILD_NUMBER") !== undefined) {
-    provider = "bitbucket";
-}
-else if (get("JENKINS_URL") !== undefined) {
-    provider = "jenkins";
-}
-else if (get("TRAVIS") === "true") {
-    provider = "travisci";
-}
-else if (get("APPVEYOR") === "True") {
-    provider = "appveyor";
-}
-else if (get("CIRCLECI") === "true") {
-    provider = "circleci";
-}
-else if (get("CI_NAME") === "codeship") {
-    provider = "codeship";
-}
-else if (get("DRONE") === "true") {
-    provider = "drone";
+  provider = "gitea";
+} else if (get("GITHUB_ACTIONS") === "true" || get("GITHUB_WORKFLOW") !== undefined) {
+  provider = "github";
+} else if (get("GITLAB_CI") === "true") {
+  provider = "gitlab";
+} else if (get("TF_BUILD") === "True" || get("SYSTEM_TEAMFOUNDATIONCOLLECTIONURI") !== undefined) {
+  provider = "azdo";
+} else if (get("BITBUCKET_BUILD_NUMBER") !== undefined) {
+  provider = "bitbucket";
+} else if (get("JENKINS_URL") !== undefined) {
+  provider = "jenkins";
+} else if (get("TRAVIS") === "true") {
+  provider = "travisci";
+} else if (get("APPVEYOR") === "True") {
+  provider = "appveyor";
+} else if (get("CIRCLECI") === "true") {
+  provider = "circleci";
+} else if (get("CI_NAME") === "codeship") {
+  provider = "codeship";
+} else if (get("DRONE") === "true") {
+  provider = "drone";
 }
 /**
  * The CI provider.

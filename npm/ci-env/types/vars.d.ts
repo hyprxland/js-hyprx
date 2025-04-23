@@ -4,30 +4,30 @@ import { type SecretMasker } from "@hyprx/secrets";
  * names for the output, env, path, and secrets files.
  */
 export interface CiEnvKeys {
-    /**
-     * The name of the environment variable that
-     * contains the path for the output vars file.
-     * Defaults to `BEARZ_CI_OUTPUT`.
-     */
-    output?: string;
-    /**
-     * The name of the environment variable that
-     * contains the path for the env vars file.
-     * Defaults to `BEARZ_CI_ENV`.
-     */
-    env?: string;
-    /**
-     * The name of the environment variable that
-     * contains the path for the path vars file.
-     * Defaults to `BEARZ_CI_PATH`.
-     */
-    path?: string;
-    /**
-     * The name of the environment variable that
-     * contains the path for the secrets vars file.
-     * Defaults to `BEARZ_CI_SECRETS`.
-     */
-    secrets?: string;
+  /**
+   * The name of the environment variable that
+   * contains the path for the output vars file.
+   * Defaults to `BEARZ_CI_OUTPUT`.
+   */
+  output?: string;
+  /**
+   * The name of the environment variable that
+   * contains the path for the env vars file.
+   * Defaults to `BEARZ_CI_ENV`.
+   */
+  env?: string;
+  /**
+   * The name of the environment variable that
+   * contains the path for the path vars file.
+   * Defaults to `BEARZ_CI_PATH`.
+   */
+  path?: string;
+  /**
+   * The name of the environment variable that
+   * contains the path for the secrets vars file.
+   * Defaults to `BEARZ_CI_SECRETS`.
+   */
+  secrets?: string;
 }
 /**
  * Sets the global secret masker for the ci-env module.
@@ -51,14 +51,14 @@ export declare function setCiEnvKeys(o: CiEnvKeys): void;
  * The options for setting a CI variable.
  */
 export interface CiVariableOptions {
-    /**
-     * Treat the value as a secret.
-     */
-    secret?: boolean;
-    /**
-     * Treat the value as output.
-     */
-    output?: boolean;
+  /**
+   * Treat the value as a secret.
+   */
+  secret?: boolean;
+  /**
+   * Treat the value as output.
+   */
+  output?: boolean;
 }
 /**
  * Prepends a path to the CI path.
@@ -126,7 +126,11 @@ export declare function getCiSecrets(): string;
  * @param options The options for the CI variable.
  * @returns void
  */
-export declare function setCiVariable(name: string, value: string, options?: CiVariableOptions): void;
+export declare function setCiVariable(
+  name: string,
+  value: string,
+  options?: CiVariableOptions,
+): void;
 /**
  * Loads the CI secrets from the secrets file if
  * it exists.

@@ -103,10 +103,10 @@ test("exec::Command - with bad command returns error", { skip: !git }, async () 
 });
 
 test("exec::exec runs inline command", { skip: !git }, async () => {
-    const cmd = exec(`git status \
-    --porcelain`);
+    const cmd = exec(`git config \
+        --list`);
     const output = await cmd.output();
-    ok(output.code === 0);
+    ok(output.code === 0, `exit code was ${output.code} and should be 0`);
 });
 
 test("exec::Command - set cwd", { skip: !ls }, async () => {
