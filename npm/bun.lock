@@ -32,6 +32,22 @@
         "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
+    "dotenv": {
+      "name": "@hyprx/dotenv",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/env": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
+        "@hyprx/strings": "^0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
+        "@types/node": "^22.14.1",
+        "picocolors": "^1.0.0",
+      },
+    },
     "env": {
       "name": "@hyprx/env",
       "version": "0.0.0-alpha.0",
@@ -60,7 +76,6 @@
         "@hyprx/assert": "^0.0.0-alpha.0",
         "@hyprx/testing": "^0.0.0-alpha.0",
         "@types/node": "^22.14.1",
-        "picocolors": "^1.0.0",
       },
     },
     "fmt": {
@@ -183,6 +198,8 @@
     "@hyprx/assert": ["@hyprx/assert@workspace:assert"],
 
     "@hyprx/chars": ["@hyprx/chars@workspace:chars"],
+
+    "@hyprx/dotenv": ["@hyprx/dotenv@workspace:dotenv"],
 
     "@hyprx/env": ["@hyprx/env@workspace:env"],
 

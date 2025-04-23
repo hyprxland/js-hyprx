@@ -20,6 +20,7 @@
     "./env",
     "./ansi",
     "./fs",
-    "./exec"
+    "./exec",
+    "./dotenv"
   ]
 }

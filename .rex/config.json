@@ -186,6 +186,15 @@
       "denoConfig": "jsr/exec/deno.json",
       "dntConfig": "jsr/exec/dnt.json",
       "packageJson": "npm/exec/package.json"
+    },
+    {
+      "name": "dotenv",
+      "id": "@hyprx/dotenv",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/dotenv",
+      "denoConfig": "jsr/dotenv/deno.json",
+      "dntConfig": "jsr/dotenv/dnt.json",
+      "packageJson": "npm/dotenv/package.json"
     }
   ]
 }
