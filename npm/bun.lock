@@ -2,6 +2,22 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {},
+    "ansi": {
+      "name": "@hyprx/ansi",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/chars": "0.0.0-alpha.0",
+        "@hyprx/env": "0.0.0-alpha.0",
+        "@hyprx/fmt": "0.0.0-alpha.0",
+        "@hyprx/process": "0.0.0-alpha.0",
+        "@hyprx/runtime-info": "0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "0.0.0-alpha.0",
+        "@hyprx/testing": "0.0.0-alpha.0",
+        "picocolors": "^1.0.0",
+      },
+    },
     "assert": {
       "name": "@hyprx/assert",
       "version": "0.0.0-alpha.0",
@@ -28,7 +44,6 @@
       "devDependencies": {
         "@hyprx/assert": "0.0.0-alpha.0",
         "@hyprx/testing": "0.0.0-alpha.0",
-        "picocolors": "^1.0.0",
       },
     },
     "fmt": {
@@ -75,7 +90,7 @@
       },
     },
     "result": {
-      "name": "@bearz/result",
+      "name": "@hyprx/result",
       "version": "0.0.0",
       "devDependencies": {
         "@hyprx/assert": "0.0.0-alpha.0",
@@ -134,7 +149,7 @@
     },
   },
   "packages": {
-    "@bearz/result": ["@bearz/result@workspace:result"],
+    "@hyprx/ansi": ["@hyprx/ansi@workspace:ansi"],
 
     "@hyprx/assert": ["@hyprx/assert@workspace:assert"],
 
@@ -149,6 +164,8 @@
     "@hyprx/path": ["@hyprx/path@workspace:path"],
 
     "@hyprx/process": ["@hyprx/process@workspace:process"],
+
+    "@hyprx/result": ["@hyprx/result@workspace:result"],
 
     "@hyprx/runtime-info": ["@hyprx/runtime-info@workspace:runtime-info"],
 

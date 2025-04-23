@@ -159,6 +159,15 @@
       "denoConfig": "jsr/env/deno.json",
       "dntConfig": "jsr/env/dnt.json",
       "packageJson": "npm/env/package.json"
+    },
+    {
+      "name": "ansi",
+      "id": "@hyprx/ansi",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/ansi",
+      "denoConfig": "jsr/ansi/deno.json",
+      "dntConfig": "jsr/ansi/dnt.json",
+      "packageJson": "npm/ansi/package.json"
     }
   ]
 }

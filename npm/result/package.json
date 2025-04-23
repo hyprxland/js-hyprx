@@ -1,5 +1,5 @@
 {
-  "name": "@bearz/result",
+  "name": "@hyprx/result",
   "version": "0.0.0",
   "description": "A simple result type for Typescript",
   "keywords": [

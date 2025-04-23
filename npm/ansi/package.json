@@ -1,0 +1,81 @@
+{
+  "name": "@hyprx/ansi",
+  "version": "0.0.0-alpha.0",
+  "description": "The ansi module provides color detection, writing ansi, codes, and an ansi writer.",
+  "keywords": [
+    "ansi",
+    "terminal",
+    "color",
+    "format",
+    "color-detection"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./detector": {
+      "import": {
+        "types": "./types/detector.d.ts",
+        "default": "./esm/detector.js"
+      }
+    },
+    "./styles": {
+      "import": {
+        "types": "./types/styles.d.ts",
+        "default": "./esm/styles.js"
+      }
+    },
+    "./enums": {
+      "import": {
+        "types": "./types/enums.d.ts",
+        "default": "./esm/enums.js"
+      }
+    },
+    "./settings": {
+      "import": {
+        "types": "./types/settings.d.ts",
+        "default": "./esm/settings.js"
+      }
+    },
+    "./writer": {
+      "import": {
+        "types": "./types/writer.d.ts",
+        "default": "./esm/writer.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/runtime-info": "0.0.0-alpha.0",
+    "@hyprx/chars": "0.0.0-alpha.0",
+    "@hyprx/env": "0.0.0-alpha.0",
+    "@hyprx/fmt": "0.0.0-alpha.0",
+    "@hyprx/process": "0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@hyprx/testing": "0.0.0-alpha.0",
+    "@hyprx/assert": "0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}
