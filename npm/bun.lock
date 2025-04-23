@@ -45,6 +45,24 @@
         "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
+    "exec": {
+      "name": "@hyprx/exec",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/env": "^0.0.0-alpha.0",
+        "@hyprx/fs": "^0.0.0-alpha.0",
+        "@hyprx/path": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
+        "@hyprx/strings": "^0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
+        "@types/node": "^22.14.1",
+        "picocolors": "^1.0.0",
+      },
+    },
     "fmt": {
       "name": "@hyprx/fmt",
       "version": "0.0.0-alpha.0",
@@ -67,7 +85,6 @@
         "@hyprx/assert": "^0.0.0-alpha.0",
         "@hyprx/testing": "^0.0.0-alpha.0",
         "@types/node": "^22.14.1",
-        "picocolors": "^1.0.0",
       },
     },
     "option": {
@@ -168,6 +185,8 @@
     "@hyprx/chars": ["@hyprx/chars@workspace:chars"],
 
     "@hyprx/env": ["@hyprx/env@workspace:env"],
+
+    "@hyprx/exec": ["@hyprx/exec@workspace:exec"],
 
     "@hyprx/fmt": ["@hyprx/fmt@workspace:fmt"],
 

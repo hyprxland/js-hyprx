@@ -19,6 +19,7 @@
     "./secrets",
     "./env",
     "./ansi",
-    "./fs"
+    "./fs",
+    "./exec"
   ]
 }

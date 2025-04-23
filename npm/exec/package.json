@@ -1,0 +1,99 @@
+{
+  "name": "@hyprx/exec",
+  "version": "0.0.0-alpha.0",
+  "description": "The exec module makes it easy to spawn child_processes across different runtimes and different operating systems.",
+  "keywords": [
+    "exec",
+    "command",
+    "shell",
+    "process",
+    "child-process",
+    "spawn",
+    "which",
+    "split-arguments",
+    "splat"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./command": {
+      "import": {
+        "types": "./types/command.d.ts",
+        "default": "./esm/command.js"
+      }
+    },
+    "./errors": {
+      "import": {
+        "types": "./types/errors.d.ts",
+        "default": "./esm/errors.js"
+      }
+    },
+    "./path-finder": {
+      "import": {
+        "types": "./types/path_finder.d.ts",
+        "default": "./esm/path_finder.js"
+      }
+    },
+    "./set-logger": {
+      "import": {
+        "types": "./types/set_logger.d.ts",
+        "default": "./esm/set_logger.js"
+      }
+    },
+    "./splat": {
+      "import": {
+        "types": "./types/splat.d.ts",
+        "default": "./esm/splat.js"
+      }
+    },
+    "./split-arguments": {
+      "import": {
+        "types": "./types/split_arguments.d.ts",
+        "default": "./esm/split_arguments.js"
+      }
+    },
+    "./which": {
+      "import": {
+        "types": "./types/which.d.ts",
+        "default": "./esm/which.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/chars": "^0.0.0-alpha.0",
+    "@hyprx/runtime-info": "^0.0.0-alpha.0",
+    "@hyprx/path": "^0.0.0-alpha.0",
+    "@hyprx/strings": "^0.0.0-alpha.0",
+    "@hyprx/env": "^0.0.0-alpha.0",
+    "@hyprx/fs": "^0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@hyprx/testing": "^0.0.0-alpha.0",
+    "@hyprx/assert": "^0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

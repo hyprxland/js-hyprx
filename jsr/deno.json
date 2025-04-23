@@ -21,7 +21,8 @@
         "./secrets",
         "./env",
         "./ansi",
-        "./fs"
+        "./fs",
+        "./exec"
     ],
     "publish": {
         "exclude": [
