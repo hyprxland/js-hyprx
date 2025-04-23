@@ -132,6 +132,33 @@
       "denoConfig": "jsr/option/deno.json",
       "dntConfig": "jsr/option/dnt.json",
       "packageJson": "npm/option/package.json"
+    },
+    {
+      "name": "result",
+      "id": "@hyprx/result",
+      "version": "0.0.0",
+      "dir": "jsr/result",
+      "denoConfig": "jsr/result/deno.json",
+      "dntConfig": "jsr/result/dnt.json",
+      "packageJson": "npm/result/package.json"
+    },
+    {
+      "name": "secrets",
+      "id": "@hyprx/secrets",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/secrets",
+      "denoConfig": "jsr/secrets/deno.json",
+      "dntConfig": "jsr/secrets/dnt.json",
+      "packageJson": "npm/secrets/package.json"
+    },
+    {
+      "name": "env",
+      "id": "@hyprx/env",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/env",
+      "denoConfig": "jsr/env/deno.json",
+      "dntConfig": "jsr/env/dnt.json",
+      "packageJson": "npm/env/package.json"
     }
   ]
 }

@@ -16,6 +16,9 @@
         "./slices",
         "./strings",
         "./fmt",
-        "./option"
+        "./option",
+        "./result",
+        "./secrets",
+        "./env"
     ]
 }

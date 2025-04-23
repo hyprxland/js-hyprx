@@ -1,0 +1,42 @@
+{
+  "name": "@bearz/result",
+  "version": "0.0.0",
+  "description": "A simple result type for Typescript",
+  "keywords": [
+    "result",
+    "typescript",
+    "error handling"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@hyprx/testing": "0.0.0-alpha.0",
+    "@hyprx/assert": "0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

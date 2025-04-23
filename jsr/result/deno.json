@@ -1,0 +1,13 @@
+{
+    "name": "@bearz/result",
+    "version": "0.0.0",
+    "description": "A simple result type for Typescript",
+    "keywords": [
+        "result",
+        "typescript",
+        "error handling"
+    ],
+    "exports": {
+        ".": "./mod.ts"
+    }
+}

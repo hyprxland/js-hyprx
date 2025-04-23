@@ -1,0 +1,12 @@
+{
+    "description": "A simple result type for Typescript",
+    "keywords": [
+        "result",
+        "typescript",
+        "error handling"
+    ],
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    }
+}
