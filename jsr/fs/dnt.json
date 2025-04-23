@@ -1,0 +1,23 @@
+{
+    "description": "The fs module provides a modern file system API that works in Deno, Bun, and NodeJs to promote creating cross-runtime packages/modules",
+    "keywords": [
+        "fs",
+        "file",
+        "system",
+        "filesystem",
+        "deno",
+        "bun",
+        "node"
+    ],
+    "devDependencies": {
+        "@types/node": "^22.14.1",
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    },
+    "dependencies": {
+        "@hyprx/path": "workspace: *"
+    },
+    "copy": {
+        "testdata": "esm/testdata"
+    }
+}

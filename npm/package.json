@@ -5,6 +5,20 @@
     "test:bun": "bun test"
   },
   "workspaces": [
-    "./*"
+    "./testing",
+    "./assert",
+    "./chars",
+    "./runtime-info",
+    "./process",
+    "./path",
+    "./slices",
+    "./strings",
+    "./fmt",
+    "./option",
+    "./result",
+    "./secrets",
+    "./env",
+    "./ansi",
+    "./fs"
   ]
 }

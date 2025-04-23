@@ -36,8 +36,8 @@
     "node": ">=22"
   },
   "devDependencies": {
-    "@hyprx/testing": "0.0.0-alpha.0",
-    "@hyprx/assert": "0.0.0-alpha.0"
+    "@hyprx/testing": "^0.0.0-alpha.0",
+    "@hyprx/assert": "^0.0.0-alpha.0"
   },
   "_generatedBy": "dnt@dev"
 }

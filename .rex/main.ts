@@ -23,8 +23,19 @@ task({
 task({
     id: "dnt",
     description: "Build the npm package",
-    async run() {
-        await runDnt();
+    async run(ctx) {
+        const parsed = parseArgs(ctx.args ?? [], {
+            boolean: ["all"],
+        });
+
+        const projects = getConfig().projects;
+        let projectNames : Array<string>  | undefined = undefined;
+
+        if (parsed.all) {
+            projectNames = projects.map((p) => p.name);
+        }
+
+        await runDnt(projectNames);
     }
 })
 

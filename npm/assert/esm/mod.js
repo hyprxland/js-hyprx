@@ -1,5 +1,5 @@
 /**
- * # @hyprxassert
+ * # @hyprx/assert
  *
  * ## Overview
  *

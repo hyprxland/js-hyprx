@@ -207,7 +207,7 @@ test("process::stdin.read", async () => {
     const code = cmd.exitCode;
     const output = data.join("");
     if (code !== 0) {
-      fail(`deno run failed ${output}`);
+      fail(`deno run failed ${output} with code ${code}`);
     }
     stringIncludes(output, "hello world");
     return;

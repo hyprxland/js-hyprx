@@ -136,7 +136,7 @@
     {
       "name": "result",
       "id": "@hyprx/result",
-      "version": "0.0.0",
+      "version": "0.0.0-alpha.0",
       "dir": "jsr/result",
       "denoConfig": "jsr/result/deno.json",
       "dntConfig": "jsr/result/dnt.json",
@@ -168,6 +168,15 @@
       "denoConfig": "jsr/ansi/deno.json",
       "dntConfig": "jsr/ansi/dnt.json",
       "packageJson": "npm/ansi/package.json"
+    },
+    {
+      "name": "fs",
+      "id": "@hyprx/fs",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/fs",
+      "denoConfig": "jsr/fs/deno.json",
+      "dntConfig": "jsr/fs/dnt.json",
+      "packageJson": "npm/fs/package.json"
     }
   ]
 }

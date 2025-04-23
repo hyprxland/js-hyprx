@@ -1,0 +1,272 @@
+{
+  "name": "@hyprx/fs",
+  "version": "0.0.0-alpha.0",
+  "description": "The fs module provides a modern file system API that works in Deno, Bun, and NodeJs to promote creating cross-runtime packages/modules",
+  "keywords": [
+    "fs",
+    "file",
+    "system",
+    "filesystem",
+    "deno",
+    "bun",
+    "node"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./chmod": {
+      "import": {
+        "types": "./types/chmod.d.ts",
+        "default": "./esm/chmod.js"
+      }
+    },
+    "./chown": {
+      "import": {
+        "types": "./types/chown.d.ts",
+        "default": "./esm/chown.js"
+      }
+    },
+    "./copy-file": {
+      "import": {
+        "types": "./types/copy_file.d.ts",
+        "default": "./esm/copy_file.js"
+      }
+    },
+    "./copy": {
+      "import": {
+        "types": "./types/copy.d.ts",
+        "default": "./esm/copy.js"
+      }
+    },
+    "./cwd": {
+      "import": {
+        "types": "./types/cwd.d.ts",
+        "default": "./esm/cwd.js"
+      }
+    },
+    "./empty-dir": {
+      "import": {
+        "types": "./types/empty_dir.d.ts",
+        "default": "./esm/empty_dir.js"
+      }
+    },
+    "./ensure-dir": {
+      "import": {
+        "types": "./types/ensure_dir.d.ts",
+        "default": "./esm/ensure_dir.js"
+      }
+    },
+    "./ensure-file": {
+      "import": {
+        "types": "./types/ensure_file.d.ts",
+        "default": "./esm/ensure_file.js"
+      }
+    },
+    "./ensure-link": {
+      "import": {
+        "types": "./types/ensure_link.d.ts",
+        "default": "./esm/ensure_link.js"
+      }
+    },
+    "./ensure-symlink": {
+      "import": {
+        "types": "./types/ensure_symlink.d.ts",
+        "default": "./esm/ensure_symlink.js"
+      }
+    },
+    "./errors": {
+      "import": {
+        "types": "./types/errors.d.ts",
+        "default": "./esm/errors.js"
+      }
+    },
+    "./exists": {
+      "import": {
+        "types": "./types/exists.d.ts",
+        "default": "./esm/exists.js"
+      }
+    },
+    "./expand-glob": {
+      "import": {
+        "types": "./types/expand_glob.d.ts",
+        "default": "./esm/expand_glob.js"
+      }
+    },
+    "./gid": {
+      "import": {
+        "types": "./types/gid.d.ts",
+        "default": "./esm/gid.js"
+      }
+    },
+    "./is-dir": {
+      "import": {
+        "types": "./types/is_dir.d.ts",
+        "default": "./esm/is_dir.js"
+      }
+    },
+    "./is-file": {
+      "import": {
+        "types": "./types/is_file.d.ts",
+        "default": "./esm/is_file.js"
+      }
+    },
+    "./link": {
+      "import": {
+        "types": "./types/link.d.ts",
+        "default": "./esm/link.js"
+      }
+    },
+    "./lstat": {
+      "import": {
+        "types": "./types/lstat.d.ts",
+        "default": "./esm/lstat.js"
+      }
+    },
+    "./make-dir": {
+      "import": {
+        "types": "./types/make_dir.d.ts",
+        "default": "./esm/make_dir.js"
+      }
+    },
+    "./make-temp-dir": {
+      "import": {
+        "types": "./types/make_temp_dir.d.ts",
+        "default": "./esm/make_temp_dir.js"
+      }
+    },
+    "./make-temp-file": {
+      "import": {
+        "types": "./types/make_temp_file.d.ts",
+        "default": "./esm/make_temp_file.js"
+      }
+    },
+    "./move": {
+      "import": {
+        "types": "./types/move.d.ts",
+        "default": "./esm/move.js"
+      }
+    },
+    "./open": {
+      "import": {
+        "types": "./types/open.d.ts",
+        "default": "./esm/open.js"
+      }
+    },
+    "./read-dir": {
+      "import": {
+        "types": "./types/read_dir.d.ts",
+        "default": "./esm/read_dir.js"
+      }
+    },
+    "./read-file": {
+      "import": {
+        "types": "./types/read_file.d.ts",
+        "default": "./esm/read_file.js"
+      }
+    },
+    "./read-link": {
+      "import": {
+        "types": "./types/read_link.d.ts",
+        "default": "./esm/read_link.js"
+      }
+    },
+    "./read-text-file": {
+      "import": {
+        "types": "./types/read_text_file.d.ts",
+        "default": "./esm/read_text_file.js"
+      }
+    },
+    "./realpath": {
+      "import": {
+        "types": "./types/realpath.d.ts",
+        "default": "./esm/realpath.js"
+      }
+    },
+    "./remove": {
+      "import": {
+        "types": "./types/remove.d.ts",
+        "default": "./esm/remove.js"
+      }
+    },
+    "./rename": {
+      "import": {
+        "types": "./types/rename.d.ts",
+        "default": "./esm/rename.js"
+      }
+    },
+    "./stat": {
+      "import": {
+        "types": "./types/stat.d.ts",
+        "default": "./esm/stat.js"
+      }
+    },
+    "./symlink": {
+      "import": {
+        "types": "./types/symlink.d.ts",
+        "default": "./esm/symlink.js"
+      }
+    },
+    "./uid": {
+      "import": {
+        "types": "./types/uid.d.ts",
+        "default": "./esm/uid.js"
+      }
+    },
+    "./utime": {
+      "import": {
+        "types": "./types/utime.d.ts",
+        "default": "./esm/utime.js"
+      }
+    },
+    "./walk": {
+      "import": {
+        "types": "./types/walk.d.ts",
+        "default": "./esm/walk.js"
+      }
+    },
+    "./write-file": {
+      "import": {
+        "types": "./types/write_file.d.ts",
+        "default": "./esm/write_file.js"
+      }
+    },
+    "./write-text-file": {
+      "import": {
+        "types": "./types/write_text_file.d.ts",
+        "default": "./esm/write_text_file.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/path": "^0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@hyprx/testing": "^0.0.0-alpha.0",
+    "@hyprx/assert": "^0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

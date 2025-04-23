@@ -52,7 +52,7 @@
  * The `@std/fmt` module uses `Deno.inspect` and `Deno.stdout.writeSync` for printf
  * which is not available in bun, node, or the browser.
  *
- * The `@hyprx/fmt` module makes modifications to `@std/fmt` module.
+ * The `@hyprx/fmt` module makes modifications to `@std/fmt`.
  *
  * For inspect or the `/I` flag inspect uses `Deno.inspect`,
  * `util.inspect` or falls back to `json.parse`.  **A browsify fallback may

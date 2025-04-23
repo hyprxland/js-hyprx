@@ -6,138 +6,150 @@
       "name": "@hyprx/ansi",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/chars": "0.0.0-alpha.0",
-        "@hyprx/env": "0.0.0-alpha.0",
-        "@hyprx/fmt": "0.0.0-alpha.0",
-        "@hyprx/process": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/env": "^0.0.0-alpha.0",
+        "@hyprx/fmt": "^0.0.0-alpha.0",
+        "@hyprx/process": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
-        "picocolors": "^1.0.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "assert": {
       "name": "@hyprx/assert",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "chars": {
       "name": "@hyprx/chars",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "env": {
       "name": "@hyprx/env",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/chars": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
-        "@hyprx/strings": "0.0.0-alpha.0",
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
+        "@hyprx/strings": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "fmt": {
       "name": "@hyprx/fmt",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/process": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/process": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
+      },
+    },
+    "fs": {
+      "name": "@hyprx/fs",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/path": "^0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
+        "@types/node": "^22.14.1",
+        "picocolors": "^1.0.0",
       },
     },
     "option": {
       "name": "@hyprx/option",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "path": {
       "name": "@hyprx/path",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/chars": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "process": {
       "name": "@hyprx/process",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "result": {
       "name": "@hyprx/result",
-      "version": "0.0.0",
+      "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "runtime-info": {
       "name": "@hyprx/runtime-info",
       "version": "0.0.0-alpha.0",
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "secrets": {
       "name": "@hyprx/secrets",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/chars": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "slices": {
       "name": "@hyprx/slices",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/chars": "0.0.0-alpha.0",
-        "@hyprx/runtime-info": "0.0.0-alpha.0",
+        "@hyprx/chars": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "strings": {
       "name": "@hyprx/strings",
       "version": "0.0.0-alpha.0",
       "dependencies": {
-        "@hyprx/slices": "0.0.0-alpha.0",
+        "@hyprx/slices": "^0.0.0-alpha.0",
       },
       "devDependencies": {
-        "@hyprx/assert": "0.0.0-alpha.0",
-        "@hyprx/testing": "0.0.0-alpha.0",
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
     "testing": {
@@ -158,6 +170,8 @@
     "@hyprx/env": ["@hyprx/env@workspace:env"],
 
     "@hyprx/fmt": ["@hyprx/fmt@workspace:fmt"],
+
+    "@hyprx/fs": ["@hyprx/fs@workspace:fs"],
 
     "@hyprx/option": ["@hyprx/option@workspace:option"],
 

@@ -20,6 +20,14 @@
         "./result",
         "./secrets",
         "./env",
-        "./ansi"
-    ]
+        "./ansi",
+        "./fs"
+    ],
+    "publish": {
+        "exclude": [
+            "node_modules",
+            "**/*.test.ts",
+            "**/dnt.ts"
+        ]
+    }
 }

@@ -1,5 +1,5 @@
 import { dirname, isAbsolute, join, resolve } from "jsr:@std/path@1";
-import { exists } from "jsr:@std/fs@1";
+import { exists, copy as copyDir } from "jsr:@std/fs@1";
 import { DntConfig, getConfig, Project, setConfig  } from "./config.ts";
 import { build, emptyDir, type EntryPoint } from "jsr:@deno/dnt@0.41.3";
 import { npmDir, projectRootDir } from "./paths.ts";
@@ -78,8 +78,15 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                continue;
            }
 
+           console.log("")
+           console.log(project.name)
+           
+
            if(project.dntConfig) {
                const denoProjectDntConfig = JSON.parse(Deno.readTextFileSync(project.dntConfig)) as DntConfig;
+                
+               console.log(denoProjectDntConfig)
+              
                 if (denoProjectDntConfig.copy) {
                     copy = {
                         ...copy,
@@ -111,7 +118,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.dependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.dependencies[key] = projectDep.version ?? baseVersion;
+                            dntConfig.dependencies[key] = `^${projectDep.version ?? baseVersion}`;
                         }
                     }
                 }
@@ -121,7 +128,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.devDependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.devDependencies[key] = projectDep.version ?? baseVersion;
+                            dntConfig.devDependencies[key] = `^${projectDep.version ?? baseVersion}`;
                         }
                     }
                 }
@@ -130,7 +137,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.peerDependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.peerDependencies[key] = projectDep.version ?? baseVersion;
+                            dntConfig.peerDependencies[key] = `^${projectDep.version ?? baseVersion}`;
                         }
                     }
                 }
@@ -139,7 +146,7 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     for (const [key, _] of Object.entries(dntConfig.optionalDependencies)) {
                         const projectDep = globalProjects.find((p) => p.name === key || p.id === key);
                         if (projectDep) {
-                            dntConfig.optionalDependencies[key] = projectDep.version ?? baseVersion;
+                            dntConfig.optionalDependencies[key] = `^${projectDep.version ?? baseVersion}`;
                         }
                     }
                 }
@@ -205,7 +212,25 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                     await Deno.writeTextFile(join(npmProjectDir, "package.json"), JSON.stringify(pkg, null, 4));
                 }
 
+            
+
                 const pd = resolve(projectRootDir, project.dir);
+
+                if (await exists(join(pd, "dnt.ts"))) {
+                    const dnt = join(pd, "dnt.ts");
+                    const cmd = new Deno.Command("deno", {
+                        args: ["run", "-A", dnt],
+                        stdout: "inherit",
+                        stderr: "inherit",
+                        cwd: pd,
+                    });
+                    const o = await cmd.output();
+                    if (o.code !== 0) {
+                        console.error("Error running dnt.ts");
+                        console.error(new TextDecoder().decode(o.stderr));
+                    }
+                }
+
                 for (const r of rm) {
                   
                     const path = resolve(npmProjectDir, r);
@@ -237,9 +262,18 @@ export async function runDnt(projectNames?: string[]) : Promise<void> {
                         }
                     }
 
+                    console.log("copy", src, dest);
+
                     if (await exists(src)) {
                         console.log(blue("cp"), src, dest);
-                        await Deno.copyFile(src, dest);
+                        if (Deno.statSync(src).isDirectory) {
+                            await copyDir(src, dest, { overwrite: true });
+                        } else {
+                            await Deno.copyFile(src, dest);
+                        }
+
+                       
+                        
                     }
                 }
 
@@ -257,6 +291,7 @@ bun.lockb`,
                     { append: true });
 
 
+                /*
                 const cmd = new Deno.Command("bun", {
                     args: ["run", "npm", "install", "--package-lock-only"],
                     stdout: "inherit",
@@ -269,6 +304,7 @@ bun.lockb`,
                     console.error("Error running npm install");
                     console.error(new TextDecoder().decode(o.stderr));
                 }
+                */
 
                 
             } 
