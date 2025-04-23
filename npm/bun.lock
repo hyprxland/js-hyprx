@@ -32,6 +32,25 @@
         "@hyprx/testing": "^0.0.0-alpha.0",
       },
     },
+    "ci-env": {
+      "name": "@hyprx/ci-env",
+      "version": "0.0.0-alpha.0",
+      "dependencies": {
+        "@hyprx/ansi": "^0.0.0-alpha.0",
+        "@hyprx/dotenv": "^0.0.0-alpha.0",
+        "@hyprx/env": "^0.0.0-alpha.0",
+        "@hyprx/fmt": "^0.0.0-alpha.0",
+        "@hyprx/fs": "^0.0.0-alpha.0",
+        "@hyprx/runtime-info": "^0.0.0-alpha.0",
+        "@hyprx/secrets": "^0.0.0-alpha.0",
+      },
+      "devDependencies": {
+        "@hyprx/assert": "^0.0.0-alpha.0",
+        "@hyprx/testing": "^0.0.0-alpha.0",
+        "@types/node": "^22.14.1",
+        "picocolors": "^1.0.0",
+      },
+    },
     "dotenv": {
       "name": "@hyprx/dotenv",
       "version": "0.0.0-alpha.0",
@@ -45,7 +64,6 @@
         "@hyprx/assert": "^0.0.0-alpha.0",
         "@hyprx/testing": "^0.0.0-alpha.0",
         "@types/node": "^22.14.1",
-        "picocolors": "^1.0.0",
       },
     },
     "env": {
@@ -198,6 +216,8 @@
     "@hyprx/assert": ["@hyprx/assert@workspace:assert"],
 
     "@hyprx/chars": ["@hyprx/chars@workspace:chars"],
+
+    "@hyprx/ci-env": ["@hyprx/ci-env@workspace:ci-env"],
 
     "@hyprx/dotenv": ["@hyprx/dotenv@workspace:dotenv"],
 

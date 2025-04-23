@@ -21,6 +21,7 @@
     "./ansi",
     "./fs",
     "./exec",
-    "./dotenv"
+    "./dotenv",
+    "./ci-env"
   ]
 }

@@ -15,13 +15,13 @@ import { has, set } from "@hyprx/env";
  * @param options.skipExisiting - If true, skips setting variables that already exist in the environment.
  */
 export function load(source, options) {
-  if (!options?.skipExpansion) {
-    source = expand(source);
-  }
-  for (const key in source) {
-    if (options?.skipExisiting && has(key)) {
-      continue;
+    if (!options?.skipExpansion) {
+        source = expand(source);
     }
-    set(key, source[key]);
-  }
+    for (const key in source) {
+        if (options?.skipExisiting && has(key)) {
+            continue;
+        }
+        set(key, source[key]);
+    }
 }

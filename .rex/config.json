@@ -195,6 +195,15 @@
       "denoConfig": "jsr/dotenv/deno.json",
       "dntConfig": "jsr/dotenv/dnt.json",
       "packageJson": "npm/dotenv/package.json"
+    },
+    {
+      "name": "ci-env",
+      "id": "@hyprx/ci-env",
+      "version": "0.1.0",
+      "dir": "jsr/ci-env",
+      "denoConfig": "jsr/ci-env/deno.json",
+      "dntConfig": "jsr/ci-env/dnt.json",
+      "packageJson": "npm/ci-env/package.json"
     }
   ]
 }

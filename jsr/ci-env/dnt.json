@@ -1,0 +1,26 @@
+{
+    "description": "The ci-env module implements it's own `@hyprx/ansi/writer` to enable logging commands for Azure DevOps and Github. ",
+    "keywords": [
+        "hyprx",
+        "ci",
+        "env",
+        "azure",
+        "devops",
+        "github",
+        "variables"
+    ],
+    "dependencies": {
+        "@hyprx/ansi": "workspace: ^",
+        "@hyprx/dotenv": "workspace: ^",
+        "@hyprx/env": "workspace: ^",
+        "@hyprx/fmt": "workspace: ^",
+        "@hyprx/fs": "workspace: ^",
+        "@hyprx/runtime-info": "workspace: ^",
+        "@hyprx/secrets": "workspace: ^"
+    },
+    "devDependencies": {
+        "@types/node": "^22.14.1",
+        "@hyprx/assert": "workspace: ^",
+        "@hyprx/testing": "workspace: ^"
+    }
+}

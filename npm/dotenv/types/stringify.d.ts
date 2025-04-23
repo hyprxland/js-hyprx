@@ -8,11 +8,11 @@
  * Options for stringifying environment variables.
  */
 export interface StringifyOptions {
-  /**
-   * If set to true, only line feed (`\n`) will be used as the newline character.
-   * Otherwise, the default newline character for the environment will be used.
-   */
-  onlyLineFeed?: boolean;
+    /**
+     * If set to true, only line feed (`\n`) will be used as the newline character.
+     * Otherwise, the default newline character for the environment will be used.
+     */
+    onlyLineFeed?: boolean;
 }
 /**
  * Converts an environment variables object into a string representation.

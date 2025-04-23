@@ -6,7 +6,4 @@ import type { SubstitutionOptions } from "@hyprx/env/expand";
  * @param options - Optional substitution options to customize the expansion behavior.
  * @returns A new record with the expanded values.
  */
-export declare function expand(
-  source: Record<string, string>,
-  options?: SubstitutionOptions,
-): Record<string, string>;
+export declare function expand(source: Record<string, string>, options?: SubstitutionOptions): Record<string, string>;

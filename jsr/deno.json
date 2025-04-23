@@ -23,7 +23,8 @@
         "./ansi",
         "./fs",
         "./exec",
-        "./dotenv"
+        "./dotenv",
+        "./ci-env"
     ],
     "publish": {
         "exclude": [

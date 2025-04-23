@@ -12,20 +12,20 @@ import { expand as substitute, get } from "@hyprx/env";
  * @returns A new record with the expanded values.
  */
 export function expand(source, options) {
-  const map = {};
-  const o = options ?? {};
-  o.get ??= (key) => {
-    if (key in map) {
-      return map[key];
+    const map = {};
+    const o = options ?? {};
+    o.get ??= (key) => {
+        if (key in map) {
+            return map[key];
+        }
+        return get(key);
+    };
+    o.set ??= (key, value) => {
+        map[key] = value;
+    };
+    for (const key in source) {
+        const value = source[key];
+        map[key] = substitute(value, o);
     }
-    return get(key);
-  };
-  o.set ??= (key, value) => {
-    map[key] = value;
-  };
-  for (const key in source) {
-    const value = source[key];
-    map[key] = substitute(value, o);
-  }
-  return map;
+    return map;
 }
