@@ -9,17 +9,17 @@
  * Cyrillic or Greek characters. The chars library is heavily based on golang's
  * unicode module.
  *
- * ![logo](https://raw.githubusercontent.com/bearz-io/js/refs/heads/main/eng/assets/bearz.io.png)
+ * ![logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
  *
  * [![JSR](https://jsr.io/badges/@hyprx/chars)](https://jsr.io/@hyprx/chars)
  * [![npm version](https://badge.fury.io/js/@hyprx%2Fchars.svg)](https://badge.fury.io/js/@hyprx%2Fchars)
- * [![GitHub version](https://badge.fury.io/gh/bearz-io%2Fjs-chars.svg)](https://badge.fury.io/gh/bearz-io%2Fjs-chars)
+ * [![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
  *
  * ## Documentation
  *
  * Documentation is available on [jsr.io](https://jsr.io/@hyprx/chars/doc)
  *
- * A list of other modules can be found at [github.com/bearz-io/js](https://github.com/bearz-io/js)
+ * A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)
  *
  * ## Usage
  *

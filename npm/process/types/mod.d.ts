@@ -2,17 +2,17 @@
  * Functionality and primitives related to the current process such as the pid, args, execPath, cwd, chdir
  * and standard streams for Deno, Node, and Bun.
  *
- * ![logo](https://raw.githubusercontent.com/bearz-io/js/refs/heads/main/eng/assets/bearz.io.png)
+ * ![logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
  *
  * [![JSR](https://jsr.io/badges/@hyprx/process)](https://jsr.io/@hyprx/process)
  * [![npm version](https://badge.fury.io/js/@hyprx%2Fprocess.svg)](https://badge.fury.io/js/@hyprx%2Fprocess)
- * [![GitHub version](https://badge.fury.io/gh/bearz-io%2Fjs-process.svg)](https://badge.fury.io/gh/bearz-io%2Fjs-process)
+ * [![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
  *
  * ## Documentation
  *
  * Documentation is available on [jsr.io](https://jsr.io/@hyprx/process/doc)
  *
- * A list of other modules can be found at [github.com/bearz-io/js](https://github.com/bearz-io/js)
+ * A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)
  *
  * ## Usage
  *

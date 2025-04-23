@@ -117,6 +117,13 @@ export async function syncProjects() {
                 if (project && project.dntConfig === undefined && hasDntConfig) {
                     project.dntConfig = relative(projectRootDir, dntConfigPath);
                 }
+
+                if (project && hasDenoConfig) {
+                    const cfg = JSON.parse(Deno.readTextFileSync(denoConfigPath));
+                    if (cfg.version && project.version !== cfg.version) {
+                        project.version = cfg.version;
+                    }
+                }
             }
         }
     }

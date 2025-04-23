@@ -1,0 +1,17 @@
+{
+    "keywords": [
+        "fmt",
+        "format",
+        "printf",
+        "inspect"
+    ],
+    "description": "Sprintf, printf ported from @std/fmt",
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    },
+    "dependencies": {
+        "@hyprx/runtime-info": "workspace: *",
+        "@hyprx/process": "workspace: *"
+    }
+}

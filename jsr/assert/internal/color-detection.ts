@@ -142,7 +142,7 @@ export function detectMode(): AnsiMode {
     }
 
     // override TERM variable
-    const gsterm = get("BEARZ_TERM");
+    const gsterm = get("HYPRX_TERM");
     if (gsterm && gsterm.length) {
         switch (gsterm) {
             case "none":

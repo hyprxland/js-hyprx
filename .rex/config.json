@@ -31,7 +31,9 @@
     "rm": [
       "test_runner.js",
       "esm/_dnt.shims.js",
-      "types/_dnt.shims.d.ts"
+      "types/_dnt.shims.d.ts",
+      "esm/internal/_dnt.shims.js",
+      "types/internal/_dnt.shims.d.ts"
     ],
     "devDependencies": {
       "@types/node": "^22.14.1"
@@ -80,7 +82,7 @@
     {
       "name": "path",
       "id": "@hyprx/path",
-      "version": "0.0.0",
+      "version": "0.0.0-alpha.0",
       "dir": "jsr/path",
       "denoConfig": "jsr/path/deno.json",
       "dntConfig": "jsr/path/dnt.json",
@@ -89,7 +91,7 @@
     {
       "name": "process",
       "id": "@hyprx/process",
-      "version": "0.1.0",
+      "version": "0.0.0-alpha.0",
       "dir": "jsr/process",
       "denoConfig": "jsr/process/deno.json",
       "dntConfig": "jsr/process/dnt.json",
@@ -107,11 +109,29 @@
     {
       "name": "strings",
       "id": "@hyprx/strings",
-      "version": "0.1.3",
+      "version": "0.0.0-alpha.0",
       "dir": "jsr/strings",
       "denoConfig": "jsr/strings/deno.json",
       "dntConfig": "jsr/strings/dnt.json",
       "packageJson": "npm/strings/package.json"
+    },
+    {
+      "name": "fmt",
+      "id": "@hyprx/fmt",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/fmt",
+      "denoConfig": "jsr/fmt/deno.json",
+      "dntConfig": "jsr/fmt/dnt.json",
+      "packageJson": "npm/fmt/package.json"
+    },
+    {
+      "name": "option",
+      "id": "@hyprx/option",
+      "version": "0.0.0-alpha.0",
+      "dir": "jsr/option",
+      "denoConfig": "jsr/option/deno.json",
+      "dntConfig": "jsr/option/dnt.json",
+      "packageJson": "npm/option/package.json"
     }
   ]
 }

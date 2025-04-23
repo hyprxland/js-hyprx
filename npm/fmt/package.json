@@ -1,0 +1,59 @@
+{
+  "name": "@hyprx/fmt",
+  "version": "0.0.0-alpha.0",
+  "description": "Sprintf, printf ported from @std/fmt",
+  "keywords": [
+    "fmt",
+    "format",
+    "printf",
+    "inspect"
+  ],
+  "homepage": "hyperx.land",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyprxland/js-hyprx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyprxland/js-hyprx/discussions/categories/bugs"
+  },
+  "module": "./esm/mod.js",
+  "types": "./types/mod.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/mod.d.ts",
+        "default": "./esm/mod.js"
+      }
+    },
+    "./inspect": {
+      "import": {
+        "types": "./types/inspect.d.ts",
+        "default": "./esm/inspect.js"
+      }
+    },
+    "./printf": {
+      "import": {
+        "types": "./types/printf.d.ts",
+        "default": "./esm/printf.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:bun": "bun test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@hyprx/runtime-info": "0.0.0-alpha.0",
+    "@hyprx/process": "0.0.0-alpha.0"
+  },
+  "devDependencies": {
+    "@hyprx/testing": "0.0.0-alpha.0",
+    "@hyprx/assert": "0.0.0-alpha.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

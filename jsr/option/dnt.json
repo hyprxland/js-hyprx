@@ -1,0 +1,13 @@
+{
+    "description": "An option/maybe type implementation in TypeScript.",
+    "keywords": [
+        "typescript",
+        "option",
+        "maybe",
+        "functional programming"
+    ],
+    "devDependencies": {
+        "@hyprx/testing": "workspace: *",
+        "@hyprx/assert": "workspace: *"
+    }
+}

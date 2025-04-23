@@ -27,17 +27,17 @@
  * perform case insensitive comparisons over strings or CharSliceLike
  * objects such as CharSlice or Uint32Arrays.
  *
- * ![logo](https://raw.githubusercontent.com/bearz-io/js/refs/heads/main/eng/assets/bearz.io.png)
+ * ![logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
  *
  * [![JSR](https://jsr.io/badges/@hyprx/slices)](https://jsr.io/@hyprx/slices)
  * [![npm version](https://badge.fury.io/js/@hyprx%2Fslices.svg)](https://badge.fury.io/js/@hyprx%2Fslices)
- * [![GitHub version](https://badge.fury.io/gh/bearz-io%2Fjs-slices.svg)](https://badge.fury.io/gh/bearz-io%2Fjs-slices)
+ * [![GitHub version](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx.svg)](https://badge.fury.io/gh/hyprxland%2Fjs-hyprx)
  *
  * ## Documentation
  *
  * Documentation is available on [jsr.io](https://jsr.io/@hyprx/slices/doc)
  *
- * A list of other modules can be found at [github.com/bearz-io/js](https://github.com/bearz-io/js)
+ * A list of other modules can be found at [github.com/hyprxland/js-hyprx](https://github.com/hyprxland/js-hyprx)
  *
  * ## Usage
  *
