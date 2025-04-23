@@ -12,7 +12,7 @@
  * It is primarily used for testing for various hyprx.land modules to make it
  * easier to write tests and switch between testing frameworks (deno test and vitest).
  *
- * <img src="https://raw.githubusercontent.com/hyprxland/js/refs/heads/main/eng/assets/logo.png" height="64" />
+ * <img src="https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png" height="64" />
  *
  * ## Usage
  * ```typescript

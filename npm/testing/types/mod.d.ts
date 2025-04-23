@@ -8,7 +8,7 @@
  * rather than implement all features and test styles until node:test is available
  * in all three testing runtimes.
  *
- * [logo](https://raw.githubusercontent.com/hyprxland/js/refs/heads/main/eng/assets/logo.png)
+ * [logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
  *
  * [![JSR](https://jsr.io/badges/@hyprx/testing)](https://jsr.io/@hyprx/testing)
  * [![npm version](https://badge.fury.io/js/@hyprx%2Ftesting.svg)](https://badge.fury.io/js/@hyprx%2Ftesting)

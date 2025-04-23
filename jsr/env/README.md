@@ -12,7 +12,7 @@ Bash and Windows style variable expansion is included. The env
 object provides additional methods to convert values to boolean,
 int, number, json, etc.  
 
-![logo](https://raw.githubusercontent.com/hyprxland/js/refs/heads/main/eng/assets/bearz.io.png)
+![logo](https://raw.githubusercontent.com/hyprxland/js-hyprx/refs/heads/main/assets/logo.png)
 
 [![JSR](https://jsr.io/badges/@hyprx/env)](https://jsr.io/@hyprx/env)
 [![npm version](https://badge.fury.io/js/@hyprx%2Fenv.svg)](https://badge.fury.io/js/@hyprx%2Fenv)
